@@ -1,0 +1,17 @@
+{
+  "name": "site",
+  "homepage": "https://github.com/karvit311/simple_game_words",
+  "authors": [
+    "yes"
+  ],
+  "description": "",
+  "main": "code.php",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

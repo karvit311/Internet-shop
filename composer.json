@@ -1,16 +1,13 @@
 {
-    "name": "vendor/name",
-    "type": "project",
-    "authors": [
-        {
-            "name": "Tsumanchuk Liubava",
-            "email": "karvit311@gmail.com"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "Application\\": "src/",
-            "Vendor\\Namespace\\": ""
-        }
+  "require": {
+    "monolog/monolog": "1.0.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Application\\": "src/",
+      "Vendor\\Namespace\\": ""
+
     }
+  },
+  "registry": "https://registry.bower.io"
 }

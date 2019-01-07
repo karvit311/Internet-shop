@@ -1,0 +1,24 @@
+#head-list-my {
+    float:right;
+    margin-top:10px;
+    margin-right:45px;
+    margin-bottom:15px;
+}
+#head-list-my li{
+    float:left;
+    list-style: none;
+}
+.list-group-item{
+    padding:10px 20px;
+    border:1px solid #fff;
+}
+#head-list-my li:hover{
+    border:1px solid #ddd;
+}
+#head-index{
+    background:#f1f1f1;
+}
+#main-body-index >li{
+    float:right;
+    list-style: none;
+}

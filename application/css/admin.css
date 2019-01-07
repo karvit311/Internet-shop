@@ -1,0 +1,76 @@
+#add_new_product{
+    float:right; 
+    margin-right:-227px;
+    margin-top:6px;
+    width:200px;
+    height:55px;
+}
+.btn-default{
+    background: linear-gradient(rgba(82,81,81,0.5), rgba(10,2,2,0.8));
+    border-color:white;
+    color:white;
+}
+.button-delete{
+    position:absolute;
+    top:336px;
+    margin-left:125px;
+    width:45%;
+    height:40px;
+    background: linear-gradient(rgb(249,238,238), rgb(181,171,171));
+    color:red;
+    border: 2px solid red;
+}
+.button-edit{
+    position:absolute;
+    top:336px;
+    width:45%;
+    height:40px;
+    margin-right:18px;
+    background: linear-gradient(rgba(130,124,124,0.5), rgba(187,183,183,0.8));
+    border:2px solid black;
+    color:black;
+}
+.btn-default.active.focus,.btn-default:hover,.btn-default:focus,.btn-default:active, .btn-default.active:focus, .btn-default.active:hover, .btn-default:active.focus, .btn-default:active:focus, .btn-default:active:hover, .open>.dropdown-toggle.btn-default.focus, .open>.dropdown-toggle.btn-default:focus, .open>.dropdown-toggle.btn-default:hover{
+    border-color:#33302b;
+    background: linear-gradient(rgba(82,81,81,0.5), rgba(10,2,2,0.8));
+    color:white;
+}
+.button-delete.active.focus,.button-delete:hover,.button-delete:focus,.button-delete:active, .button-delete.active:focus, .button-delete.active:hover, .button-delete:active.focus, .button-delete:active:focus, .button-delete:active:hover, .open>.dropdown-toggle.button-delete.focus, .open>.dropdown-toggle.button-delete:focus, .open>.dropdown-toggle.button-delete:hover{
+    border-color: red;
+    background-image: linear-gradient(red,indianred);
+    background: linear-gradient(rgba(232,127,127,1), rgba(202,87,87,1));
+    color:white;
+}
+/*ADMIN-ADD-NEW-SCHEDULE*/
+.admin-add-new-schedule{
+    margin: 0 auto;
+    width: 500px;
+}
+.admin-add-new-schedule-datetimepicker1{
+    width: 50%;
+}
+.admin-add-new-schedule-h2-all-trips{
+    margin: 0 auto;
+    width: 300px;
+}
+/*ADMIN-ADD-NEW-SCHEDULE -END-*/
+/*ADMIN-LOGIN-ADMINKA*/
+#login_form1-adminka{
+    border:1px solid #ddd;
+    display:inline-block;
+    width:300px;
+    margin-left:450px;
+    margin-top: 100px;
+}
+.feedbacko-admin-login{
+    display:block;
+}
+/*ADMIN-LOGIN-ADMINKA -END-*/
+/*ADMIN-ALL-DEPARTMENTS*/
+#FormControlInputPhoto{
+    margin-top:20px;
+}
+#FormControlInputPhotoDiv{
+    margin-bottom:20px;
+}
+/*ADMIN-ALL-DEPARTMENTS -END-*/
