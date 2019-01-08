@@ -84,11 +84,10 @@ error_reporting(E_ALL);?>
                                 .attr('href','/main/products/?department_id='+ id+'&page=1')
                                 .prepend($('<img>',{id:'theImg',src:'/application/photo/department/' + photo})
                                     .addClass('right-block-menu-index-img')
-
                                 )
                                 .append($('<div>')
-                                        .addClass('right-block-img-text-block')
-                                        .text(department)
+                                    .addClass('right-block-img-text-block')
+                                    .text(department)
                                 )
                             )
                         )

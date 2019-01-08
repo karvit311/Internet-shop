@@ -1241,7 +1241,6 @@ $_SESSION['urlpage'] = "<a href='/admin/index'>Товары</a>";?>
             $('.id-modal').val(product_iid);
             var name = $(this).attr('name');
             $('.name_modal_edit').val(name);
-
             $.ajax({
                 type: "POST",
                 url: "/admin/GetProductById",
@@ -1292,37 +1291,35 @@ $_SESSION['urlpage'] = "<a href='/admin/index'>Товары</a>";?>
                                     if (id_of_this_page_product != attr_id_of_this_product) {
                                     } else {
                                         $('.small_images').css('display','block');
-
-                                        $('.small_images_modal_edit')
-                                            .append($('<div>')
-                                                .addClass('adding_div_small_img')
-                                                .css('width','160px')
-                                                .append($('<div>')
-                                                    .addClass('modal_small_images_div' + res_small_id)
-                                                    .css('width', '160px')
-                                                    .attr('id_of_this_product', id_of_this_page_product)
-                                                    .css('padding', '10px')
-                                                    .css('margin-left', '50px')
-                                                    .css('margin-bottom', '10px')
-                                                    .append($('<img>')
-                                                        .attr('src', '/application/photo/small_images/' + department_id_from_url + '/' + res_small_img)
-                                                        .addClass('modal_small_images_main')
-                                                        .css('width', '120px')
-                                                        .attr('iid', res_small_id))
-                                                    .append($('<button>')
-                                                        .attr('type', 'button')
-                                                        .css('margin-left', '-10px')
-                                                        .css('margin-top', '-5px')
-                                                        .css('opacity', '1')
-                                                        .css('color', 'red')
-                                                        .css('margin-left', '-15px')
-                                                        .addClass('close')
-                                                        .attr('sm_img_iid', res_small_id)
-                                                        .attr('aria-label', 'Close')
-                                                        .append($('<span>')
-                                                            .attr('aria-hidden', true)
-                                                            .html('&times;')
-                                                        )
+                                        $('.small_images_modal_edit').append($('<div>')
+                                        .addClass('adding_div_small_img')
+                                        .css('width','160px')
+                                        .append($('<div>')
+                                            .addClass('modal_small_images_div' + res_small_id)
+                                            .css('width', '160px')
+                                            .attr('id_of_this_product', id_of_this_page_product)
+                                            .css('padding', '10px')
+                                            .css('margin-left', '50px')
+                                            .css('margin-bottom', '10px')
+                                            .append($('<img>')
+                                                .attr('src', '/application/photo/small_images/' + department_id_from_url + '/' + res_small_img)
+                                                .addClass('modal_small_images_main')
+                                                .css('width', '120px')
+                                                .attr('iid', res_small_id))
+                                                .append($('<button>')
+                                                    .attr('type', 'button')
+                                                    .css('margin-left', '-10px')
+                                                    .css('margin-top', '-5px')
+                                                    .css('opacity', '1')
+                                                    .css('color', 'red')
+                                                    .css('margin-left', '-15px')
+                                                    .addClass('close')
+                                                    .attr('sm_img_iid', res_small_id)
+                                                    .attr('aria-label', 'Close')
+                                                    .append($('<span>')
+                                                        .attr('aria-hidden', true)
+                                                        .html('&times;')
+                                                    )
                                                 )
                                             )
                                         )
@@ -1525,7 +1522,6 @@ $_SESSION['urlpage'] = "<a href='/admin/index'>Товары</a>";?>
                                                         $('.close').click(function () {
                                                             $('#addimage0  input[type="file"]').val('');
                                                             var iid_small_images = $(this).attr('sm_img_iid');
-                                                            // alert(iid_small_images);
                                                             $.ajax({
                                                                 url: "/admin/DeleteSmImgAdded",
                                                                 type: "POST",
@@ -1536,9 +1532,6 @@ $_SESSION['urlpage'] = "<a href='/admin/index'>Товары</a>";?>
                                                                     alert("Error");
                                                                 }
                                                             });
-                                                            // $(this).remove();
-                                                            // $(this).find('img').remove();
-                                                            // $('.preview_small'+iid_small_images).find('img').remove();
                                                             $('.preview_small'+iid_small_images).remove();
                                                             $('.preview_small').css('margin-top','-25px');
                                                         });
@@ -1566,7 +1559,8 @@ $_SESSION['urlpage'] = "<a href='/admin/index'>Товары</a>";?>
                         if($('#discount').is(':checked')) {
                             var discount = '1';
                             var value_discount = $('.quantity_discount').val();
-                            var end_date_discount = $('#datetimepicker3 input#discount_end_date').val();
+                            var end_date_discount = $('#datetimepicker6 input#bday').val();
+                            alert(end_date_discount);
                         }else{
                             var discount = '0';
                             var value_discount = '0';
@@ -1580,7 +1574,7 @@ $_SESSION['urlpage'] = "<a href='/admin/index'>Товары</a>";?>
                         if ($('#special_offer').is(':checked')) {
                             var special_offer = '1';
                             var value_special_offer = $('.description_special_offer').val();
-                            var end_date_special_offer = $('#datetimepicker5 input#special_offer_end_date').val();
+                            var end_date_special_offer = $('#datetimepicker8 input#bday_special_offer').val();
                         } else {
                             var special_offer = '0';
                             var value_special_offer = '0';
@@ -1613,13 +1607,11 @@ $_SESSION['urlpage'] = "<a href='/admin/index'>Товары</a>";?>
                                 }
                             },
                             error: function () {
-                                // alert("Error");
                             }
                         });
                     });
                 },
                 error: function () {
-                    // alert("Error");
                 }
             });
             $('.small_images').on('click','a', function () {

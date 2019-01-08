@@ -299,7 +299,6 @@ error_reporting(E_ALL);?>
                 success: function (res) {
                 },
                 error: function () {
-                    // alert("Error");
                 }
             });
         }
@@ -376,7 +375,6 @@ error_reporting(E_ALL);?>
                     });
                 },
                 error: function () {
-                    // alert("Error");
                 }
             });
         });
