@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a4e064a6-aa83-4c62-b330-4f87cb88d7fe" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/localhost.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/localhost.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/core/App.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/App.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/core/route.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/core/route.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/css/css.css" beforeDir="false" afterPath="$PROJECT_DIR$/application/css/css.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/js/site.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/js/site.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/models/Animal.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/layout.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-    </list>
+    <list default="true" id="a4e064a6-aa83-4c62-b330-4f87cb88d7fe" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -364,7 +346,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1015" />
@@ -658,16 +640,18 @@
       <workItem from="1546766108194" duration="1586000" />
       <workItem from="1546770411185" duration="276000" />
       <workItem from="1546855130035" duration="698000" />
+      <workItem from="1546933592616" duration="505000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1995638000" />
+    <option name="totallyTimeSpent" value="1996143000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8537931" visible="true" weight="0.23454158" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8537931" visible="true" weight="0.122068234" />
       <window_info id="Structure" order="1" sideWeight="0.4951724" weight="0.2489339" />
       <window_info id="Favorites" order="2" sideWeight="0.1462069" side_tool="true" weight="0.11747851" />
       <window_info anchor="bottom" id="Message" order="0" />

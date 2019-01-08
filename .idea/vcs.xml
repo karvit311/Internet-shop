@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Internet-shop" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/basic" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/bootstrap-datetimepicker" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/test/basic" vcs="Git" />
