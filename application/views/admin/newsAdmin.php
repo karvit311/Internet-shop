@@ -314,7 +314,6 @@
                                             }
                                         },
                                         error: function () {
-                                            // alert("Error");
                                         }
                                     });
                                 });
@@ -346,7 +345,6 @@
                     }
                 },
                 error: function () {
-                    // alert("Error");
                 }
             });
         });

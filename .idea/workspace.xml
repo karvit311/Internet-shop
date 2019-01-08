@@ -2,38 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4e064a6-aa83-4c62-b330-4f87cb88d7fe" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/application/css/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/css/css.css" beforeDir="false" afterPath="$PROJECT_DIR$/application/css/css.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/css/site.css" beforeDir="false" afterPath="$PROJECT_DIR$/application/css/site.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/css/site2.css" beforeDir="false" afterPath="$PROJECT_DIR$/application/css/site2.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/js/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/add-administrators.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/add-administrators.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/add_new_schedule.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/administrators.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/administrators.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/adminka.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/adminka.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/all_departments.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/all_departments.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/be_over.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/be_over.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/block-header.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/block-header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/clients.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/clients.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/delivery.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/delivery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/discount.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/discount.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/footer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/head.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/news.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/news.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/admin/newsAdmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/newsAdmin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/news_of_company.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/orders.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/orders.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/popular.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/popular.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/products.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/products.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/promotion.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/promotion.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/reviews.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/reviews.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/special_offers.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/special_offers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/viewOrder.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/viewOrder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/worker.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/worker.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/main/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/main/login.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,8 +53,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/admin/newsAdmin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="275" column="36" lean-forward="true" selection-start-line="274" selection-start-column="38" selection-end-line="275" selection-end-column="36" />
+            <state relative-caret-position="508">
+              <caret line="338" column="39" lean-forward="true" selection-start-line="338" selection-start-column="39" selection-end-line="338" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -680,12 +649,12 @@
       <workItem from="1546766108194" duration="1586000" />
       <workItem from="1546770411185" duration="276000" />
       <workItem from="1546855130035" duration="698000" />
-      <workItem from="1546933592616" duration="19281000" />
+      <workItem from="1546933592616" duration="19560000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2014919000" />
+    <option name="totallyTimeSpent" value="2015198000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1082,8 +1051,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/newsAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="275" column="36" lean-forward="true" selection-start-line="274" selection-start-column="38" selection-end-line="275" selection-end-column="36" />
+        <state relative-caret-position="508">
+          <caret line="338" column="39" lean-forward="true" selection-start-line="338" selection-start-column="39" selection-end-line="338" selection-end-column="39" />
         </state>
       </provider>
     </entry>
