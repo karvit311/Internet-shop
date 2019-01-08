@@ -119,7 +119,7 @@ margin-top:-22px;
 .div-editor{
   display: none;
 }
-#block-body-admin{
+#block-body-admin {
     width: 950px;
     margin: 5px auto;
     background-color: white;
@@ -127,7 +127,7 @@ margin-top:-22px;
 }
 #block-header-admin{
     width: 950px;
-    height: 103px;
+    height: 80px;
     border-bottom: 1px solid #E0E0E0;
 }
 #block-header1{
@@ -698,6 +698,12 @@ a.pstr-prev:hover, a.pstr-next:hover{
     position: absolute; 
     margin-left: 580px; 
     margin-top: -36px;
+}
+.client-links {
+    margin-top:-27px;
+}
+.client-email{
+    padding-top:8px;
 }
 .block-news-admin{
     border-bottom: 1px solid #E0E0E0;

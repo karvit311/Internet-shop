@@ -137,13 +137,7 @@
                     <div class="form-group">
                         <label for="adminAboutContent">Content</label>
                         <textarea class="form-control" id="adminAboutContent" rows="100">
-                            <?php // $res_about_company['content'];?>
                         </textarea>
-                        <script>
-                            // $(function($) {
-                            //     $("#adminAboutContent").summernote();
-                            // });
-                        </script>
 
                     </div>
                     <?php }?>

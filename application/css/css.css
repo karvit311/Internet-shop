@@ -240,6 +240,7 @@ ul ul a {
 }
 .button-over{
     background-color: #c1bc3c;
+
 }
 .button-2in1{
     background-color: #8a4c9a;
@@ -1511,43 +1512,9 @@ ul ul a {
     float:right;
     list-style: none;
 }
-/*///Tooltip//////*/
-/*.tooltip1 {
-    position: relative;
-    display: inline-block;
-    /*border-bottom: 1px dotted black;*/
-/*}
-
-.tooltip1 .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -60px;
-    opacity: 0;
-    transition: opacity 0.3s;
+#aza1 td {
+    width: 30%;
 }
-
-.tooltip1 .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
+#aza1{
+    margin-left:20px;
 }
-
-.tooltip1:hover .tooltiptext {
-    visibility: visible;
-    opacity: 1;
-}*/
-/*///Tooltip//////*/

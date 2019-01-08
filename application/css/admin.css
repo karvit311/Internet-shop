@@ -74,3 +74,87 @@
     margin-bottom:20px;
 }
 /*ADMIN-ALL-DEPARTMENTS -END-*/
+#left-block li{
+    position:relative;
+}
+/*FOOTER*/
+.my-footer{
+    background:#515456;
+    color:#a9a1a1;
+    margin-top:315px;
+}
+.footer_hr{
+    border-top:1px solid #6f6b6b;
+}
+.my-footer li a{
+    color:#a9a1a1;
+}
+.my-footer h5{
+    color:#f9e2e2;
+}
+.footer_hr_second{
+    border-top:1px solid #6f6b6b;
+}
+.footer_of_footer{
+    background:#2d3031;
+}
+.list_of_contact_footer li{
+    color:#7a9dbb
+}
+.button_footer{
+    border-radius: 50%;
+}
+/*FOOTER*/
+/*NEWS OF CONMPANY*/
+#FormControlInputTitle{
+    margin-bottom:15px;
+}
+#FormControlInputPhoto{
+    margin-bottom:15px;
+}
+#allNews ul li{
+    list-style:none;
+}
+.admin_text_description_of_new{
+    margin-bottom:15px;
+}
+.new_admin_div_edition{
+    border:1px solid #ddd;
+    padding:10px 10px 30px 10px;
+    margin-left:-41px;
+    margin-bottom:20px;
+}
+.new_admin_div_edition div{
+    display:flex;
+}
+.new_admin_div_button{
+    float:right;
+}
+.reviews-edition.edit a{
+    color:#a06d0f;
+}
+.reviews-edition.delete a{
+    color:red;
+}
+.new_admin_div_info{
+    width:65%;
+    display:block;
+}
+.new_admin_div_info li{
+    list-style:none;
+    float:left;
+    margin-bottom:15px;
+}
+.new_admin_div_info h4{
+    font-weight:bold;
+    font-size:18px;
+}
+.new_admin_div_button p{
+    margin-left:15px;
+}
+.add_new_admin{
+    margin-left:585px;
+    margin-top:15px;
+    margin-bottom:15px;
+}
+/*NEWS OF COMPANY*/

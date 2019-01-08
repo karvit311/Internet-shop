@@ -11,13 +11,6 @@ foreach($res_count_no_accepted_reviews as $res_count_no_accepted_review){
 }
 if ($count_no_accepted_orders  > 0) { $count_str1 = '<p>+'.$count_no_accepted_orders .'</p>'; } else { $count_str1 = ''; }
 if ($count_no_accepted_reviews > 0) { $count_str2 = '<p>+'.$count_no_accepted_reviews.'</p>'; } else { $count_str2 = ''; }?>
-<style type="text/css">
-    #block-header-admin{
-        width: 950px;
-        height: 80px;
-        border-bottom: 1px solid #E0E0E0;
-    }
-</style>
 <div id="block-header-admin" style="height:103px;">
     <div id="block-header1" >
         <h3>AllPan. Панель управления</h3>
@@ -73,12 +66,4 @@ if ($count_no_accepted_reviews > 0) { $count_str2 = '<p>+'.$count_no_accepted_re
         </div>
     </div>
 </div><!--END MODAl -->
-<script>
-    $('.products_select_department').click(function(){
-        $("#selectDepartmentModal").modal("show");
-        $('#select_department').click(function(){
-            var department_id = $('#SelectDepartment option:selected, this').attr('department_id');
-            window.location.href = "/admin/products/?department_id=" + department_id+"&page="+1;
-        });
-    });
-</script>
+<script src="/application/js/admin.js"></script>

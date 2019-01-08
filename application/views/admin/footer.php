@@ -2,23 +2,6 @@
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);?>
-
-<style>
-    .my-footer{
-        background:#515456;
-        color:#a9a1a1;
-        margin-top:315px;
-    }
-    .footer_hr{
-        border-top:1px solid #6f6b6b;
-    }
-    .my-footer li a{
-        color:#a9a1a1;
-    }
-    .my-footer h5{
-        color:#f9e2e2;
-    }
-</style>
 <!-- Footer -->
 <footer class="my-footer ">
     <div class="container text-center ">
@@ -61,11 +44,6 @@ error_reporting(E_ALL);?>
                     </li>
                 </ul>
             </div>
-            <style>
-                /*.list_of_contact_footer li a{*/
-                /*color:#eacbd8;*/
-                /*}*/
-            </style>
             <div class="col-2">
                 <h5 class="text-uppercase ">CONTACT</h5>
                 <ul class="list-unstyled list_of_contact_footer">
@@ -86,9 +64,7 @@ error_reporting(E_ALL);?>
         </div>
     </div>
     <!-- Footer Links -->
-
     <hr class="footer_hr">
-
     <!-- Call to action -->
     <ul class="list-unstyled list-inline text-center ">
         <li class="">
@@ -98,26 +74,8 @@ error_reporting(E_ALL);?>
             <a href="/main/Signup" class="btn btn-danger button_footer">Sign up!</a>
         </li>
     </ul>
-    <style>
-        .footer_hr_second{
-            /*margin:0;*/
-            border-top:1px solid #6f6b6b;
-        }
-        .footer_of_footer{
-            background:#2d3031;
-            /*margin-top:5px;*/
-        }
-        .list_of_contact_footer li{
-            color:#7a9dbb
-        }
-        .button_footer{
-            border-radius: 50%;
-        }
-    </style>
     <!-- Call to action -->
-
     <div class="footer_of_footer">
-
         <hr class="footer_hr">
         <!-- Social buttons -->
         <ul class="list-unstyled list-inline text-center ">
@@ -148,7 +106,6 @@ error_reporting(E_ALL);?>
             </li>
         </ul>
         <!-- Social buttons -->
-
         <!-- Copyright -->
         <div class="footer-copyright text-center ">© 2018 Copyright:
             <a href="https://mdbootstrap.com/bootstrap-tutorial/"> MDBootstrap.com</a>

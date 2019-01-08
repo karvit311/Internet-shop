@@ -10,19 +10,11 @@ error_reporting(E_ALL);?>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
-    <style type="text/css">
-        #aza1 td {
-            width: 30%;
-        }
-        #aza1{
-            margin-left:20px;
-        }
-    </style>
     <body style="background-color: #F2F4F9;" >
         <div class="container">
             <div class="row">
                 <?php
-                if($_SESSION['name'] = "admin")
+                if($_SESSION['admin'] = "admin")
                 {
                 if (isset($_SESSION['admin_role'])) {
                     $_SESSION['urlpage'] = "<a href='/site/index'>Главная</a>";

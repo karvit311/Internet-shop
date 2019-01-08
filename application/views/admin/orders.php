@@ -206,62 +206,62 @@ $_SESSION['urlpage'] = "<a href='/admin/index'>Заказы</a>";?>
                         ?>
                         <div id="block-content-admin">
                             <?php
-                            if($_SESSION['admin'] = "admin")
-                            {
-                                if(isset($_GET['logout']))
-                                {
-                                    unset($_SESSION['auth_admin']);
-                                    return $this->redirect('/user/login');
-                                }
-                                if($_SESSION['admin_role'] == 'admin-order' || $_SESSION['admin_role'] == 'admin'){?>
-                                    <div id="block-parameters">
-                                        <ul id="options-list">
-                                            <li>Сортировать</li>
-                                            <li><a id="select-links" href="#"><?= $sort_name; ?></a>
-                                                <ul id="list-links-sort">
-                                                    <li><a href="/admin/Orders/?sort=all-orders">От А до Я</a></li>
-                                                    <li><a href="/admin/Orders/?sort=confirmed">Обработанные</a></li>
-                                                    <li><a href="/admin/Orders/?sort=no-confirmed">Не обработанные</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div id="block-info">
-                                        <ul id="review-info-count">
-                                            <li>Всего заказов - <strong><?= $res_count_all_order['total']; ?></strong></li>
-                                            <li>Обработаных - <strong><?= $res_count_confirmed_order['total']; ?></strong></li>
-                                            <li>Не обработанных - <strong><?= $res_count_no_confirmed_order['total']; ?></strong></li>
-                                        </ul>
-                                    </div>
-                                    <?php
-                                    if ($res_count > 0)
-                                    {
-                                        foreach ($result as $key => $row) {
-                                            if ($row["order_confirmed"] == 'yes')
-                                            {
-                                                $status = '<span class="green">Обработан</span>';
-                                            } else{
-                                                $status = '<span class="red">Не обработан</span>';
+                            if($_SESSION['admin'] = "admin") {
+                                if (isset($_SESSION['admin_role'])) {
+                                    if($_SESSION['admin_role'] == 'admin-order' || $_SESSION['admin_role'] == 'admin'){?>
+                                        <div id="block-parameters">
+                                            <ul id="options-list">
+                                                <li>Сортировать</li>
+                                                <li><a id="select-links" href="#"><?= $sort_name; ?></a>
+                                                    <ul id="list-links-sort">
+                                                        <li><a href="/admin/Orders/?sort=all-orders">От А до Я</a></li>
+                                                        <li><a href="/admin/Orders/?sort=confirmed">Обработанные</a></li>
+                                                        <li><a href="/admin/Orders/?sort=no-confirmed">Не обработанные</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div id="block-info">
+                                            <ul id="review-info-count">
+                                                <li>Всего заказов - <strong><?= $res_count_all_order['total']; ?></strong></li>
+                                                <li>Обработаных - <strong><?= $res_count_confirmed_order['total']; ?></strong></li>
+                                                <li>Не обработанных - <strong><?= $res_count_no_confirmed_order['total']; ?></strong></li>
+                                            </ul>
+                                        </div>
+                                        <?php
+                                        if ($res_count > 0)
+                                        {
+                                            foreach ($result as $key => $row) {
+                                                if ($row["order_confirmed"] == 'yes')
+                                                {
+                                                    $status = '<span class="green">Обработан</span>';
+                                                } else{
+                                                    $status = '<span class="red">Не обработан</span>';
+                                                }
+                                                echo '
+                                                    <div class="block-order">
+                                                     
+                                                    <p class="order-datetime" >'.$row["datetime"].'</p>
+                                                    <p class="order-number" >Заказ ¹ '.$row["id"].' - '.$status.'</p>
+                                                    <p class="order-link" ><a class="green" href="/admin/viewOrder/?id='.$row["id"].'" >Подробнее</a></p>
+                                                    </div>
+                                                    ';
                                             }
-                                            echo '
-                                                <div class="block-order">
-                                                 
-                                                <p class="order-datetime" >'.$row["datetime"].'</p>
-                                                <p class="order-number" >Заказ ¹ '.$row["id"].' - '.$status.'</p>
-                                                <p class="order-link" ><a class="green" href="/admin/viewOrder/?id='.$row["id"].'" >Подробнее</a></p>
-                                                </div>
-                                                ';
-                                        }
-                                    }?>
-                                <?php
-                                }else{?>
-                                    <!-- ERROR PRIVILEGE-->
-                                    <div class="alert alert-danger  alert-dismissable error-privilege"  id="flash-msg-privilege-orders">
-                                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
-                                        <h4><i class="icon fa fa-check"></i>ERROR!</h4><p>У Вас нет прав на редактирование заказов!</p>
-                                    </div>
-                                <?php
-                                }
+                                        }?>
+                                    <?php
+                                    }else{?>
+                                        <!-- ERROR PRIVILEGE-->
+                                        <div class="alert alert-danger  alert-dismissable error-privilege"  id="flash-msg-privilege-orders">
+                                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
+                                            <h4><i class="icon fa fa-check"></i>ERROR!</h4><p>У Вас нет прав на редактирование заказов!</p>
+                                        </div>
+                                    <?php
+                                    }
+                                }else{ ?>
+                            <script type="text/javascript">
+                                window.location.href = '/main/Login';
+                            </script>
+                            <?php }
                             } else {
                                 header('Location: /main/Login');
                             }?>
