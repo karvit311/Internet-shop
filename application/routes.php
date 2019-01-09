@@ -130,7 +130,6 @@ return array(
     'admin/GetPromotionByIid' => 'admin/GetPromotionByIid',
     'admin/GetFilterProductBrand' => 'admin/GetFilterProductBrand',
     'admin/InsertMainPhotoAdd' => 'admin/InsertMainPhotoAdd',
-    'admin/Signup' => 'admin/Signup',
     'admin/Logout' => 'admin/Logout',
     'admin/CheckIfExistThisProduct' => 'admin/CheckIfExistThisProduct',
     'admin/UpdateSmallPhoto' => 'admin/UpdateSmallPhoto',

@@ -11,6 +11,7 @@ class AdminController
     public function __construct() {
         $this->uploader = new Uploader();
     }
+
 	public function actionIndex()
 	{
         session_start();
@@ -18,6 +19,7 @@ class AdminController
     	require_once(ROOT . '/application/views/admin/index.php');
         require_once(ROOT . '/application/views/admin/footer.php');
 	}
+
     public function actionAbout()
     {
         session_start();
@@ -25,6 +27,7 @@ class AdminController
         require_once(ROOT . '/application/views/admin/about.php');
         require_once(ROOT . '/application/views/admin/footer.php');
     }
+
     public function actionOrders()
     {
         session_start();
@@ -32,6 +35,7 @@ class AdminController
         require_once(ROOT . '/application/views/admin/orders.php');
         require_once(ROOT . '/application/views/admin/footer.php');
     }
+
     public function actionviewOrder()
     {
         session_start();
@@ -39,6 +43,7 @@ class AdminController
         require_once(ROOT . '/application/views/admin/viewOrder.php');
         require_once(ROOT . '/application/views/admin/footer.php');
     }
+
     public function actionclients()
     {
         session_start();
@@ -46,6 +51,7 @@ class AdminController
         require_once(ROOT . '/application/views/admin/clients.php');
         require_once(ROOT . '/application/views/admin/footer.php');
     }
+
     public function actionNewsOfCompany()
     {
         session_start();
@@ -53,6 +59,7 @@ class AdminController
         require_once(ROOT . '/application/views/admin/news_of_company.php');
         require_once(ROOT . '/application/views/admin/footer.php');
     }
+
     public function actionallDepartments()
     {
         session_start();
@@ -60,6 +67,7 @@ class AdminController
         require_once(ROOT . '/application/views/admin/all_departments.php');
         require_once(ROOT . '/application/views/admin/footer.php');
     }
+
     public function actionReviews()
     {
         session_start();
@@ -75,6 +83,7 @@ class AdminController
         require_once(ROOT . '/application/views/admin/delivery.php');
         require_once(ROOT . '/application/views/admin/footer.php');
     }
+
     public function actionNews()
     {
         session_start();
@@ -82,6 +91,7 @@ class AdminController
         require_once(ROOT . '/application/views/admin/news.php');
         require_once(ROOT . '/application/views/admin/footer.php');
     }
+
     public function actionPopular()
     {
         session_start();
@@ -89,6 +99,7 @@ class AdminController
         require_once(ROOT . '/application/views/admin/popular.php');
         require_once(ROOT . '/application/views/admin/footer.php');
     }
+
     public function actionBeOver()
     {
         session_start();
@@ -96,6 +107,7 @@ class AdminController
         require_once(ROOT . '/application/views/admin/be_over.php');
         require_once(ROOT . '/application/views/admin/footer.php');
     }
+
     public function actionadminka()
     {
         session_start();
@@ -111,6 +123,7 @@ class AdminController
         require_once(ROOT . '/application/views/admin/administrators.php');
         require_once(ROOT . '/application/views/admin/footer.php');
     }
+
     public function actionAddAdministrators()
     {
         session_start();
@@ -216,7 +229,6 @@ class AdminController
             }else{
                 $delete_delivery = '0';
             }
-
             if(isset($_POST['view_admin'])){
                 $view_admin = '1';
             }else{
@@ -260,13 +272,7 @@ class AdminController
         require_once(ROOT . '/application/views/admin/add-administrators.php');
         require_once(ROOT . '/application/views/admin/footer.php');
     }
-    public function actionSignup()
-    {
-       // session_start();
-        require_once(ROOT . '/application/views/admin/head.php');
-        require_once(ROOT . '/application/views/admin/signup.php');
-        require_once(ROOT . '/application/views/admin/footer.php');
-    }
+
     public function actionLogout()
     {
         session_start();
@@ -293,6 +299,7 @@ class AdminController
             echo 1;
         }
     }
+
     public function actionDeleteReview()
     {
         if (NULL !=($_POST['review_id'])) {
@@ -302,6 +309,7 @@ class AdminController
             echo 1;
         }
     }
+
     public function actionDeleteDepartmentAdmin()
     {
         if (NULL !=($_POST['iid'])) {
@@ -311,6 +319,7 @@ class AdminController
             echo 1;
         }
     }
+
     public function actiondeleteOrderAdmin()
     {
         if (NULL !=($_POST['order_id'])) {
@@ -330,6 +339,7 @@ class AdminController
             echo 1;
         }
     }
+
     public function actionacceptReview()
     {
         if (NULL !=($_POST['review_id'])) {
@@ -340,6 +350,7 @@ class AdminController
             echo 1;
         }
     }
+
     public function actionCheckUnique()
     {
         if (NULL !=($_POST['email'])) {
@@ -355,6 +366,7 @@ class AdminController
             }
         }
     }
+
     public function actionCheckData()
     {
         if (isset($_POST['login']) && isset($_POST['password'])) {
@@ -388,6 +400,7 @@ class AdminController
             }
         }
     }
+
     public function actionLogin()
     {
        // session_unset();
@@ -395,6 +408,7 @@ class AdminController
         require_once(ROOT . '/application/views/admin/login.php');
         require_once(ROOT . '/application/views/admin/footer.php');
     }
+
     public function actionSpecialOffers()
     {
         session_start();

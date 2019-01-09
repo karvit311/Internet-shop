@@ -9,4 +9,10 @@ $(".mycart").each(function() {
         });
     });
 });
+$('.logout-main-index').click(function(){
+    location.reload();
+    $(location).attr("href", '/main/Logout');
+});
+
+
 // HEAD _END_

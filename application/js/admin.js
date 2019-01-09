@@ -651,6 +651,7 @@ $("button#login_in_adminka").click(function() {
         data: "login=" +login + "&password="+password,
         success: function (response) {
             if($.trim(response) == 1) {
+                // location.reload();
                 window.location.replace("/admin/index");
             }else{
                 alert('Проверьте корректность введенных данных!')

@@ -116,13 +116,13 @@
                 //session_start();
                 if (session_status() != PHP_SESSION_NONE) {
                     if ($_SESSION['loggedin'] == 1) { ?>
-                        <li class="list-group-item"><a href="/main/Logout"><?= $_SESSION['name'] ?> (Выйти)</a></li>
+                        <li class="list-group-item logout-main-index"><a href="#"><?= $_SESSION['name'] ?> (Выйти)</a></li>
                     <?php }else{?>
                         <li class="list-group-item"><a href="/main/Signup">Sign up</a></li>
                         <li class="list-group-item"><a href="/main/Login">Login</a></li>
                    <?php }
                     if($_SESSION['name'] == 'admin'){?>
-                        <li class="list-group-item"><a href="/admin/adminka">Войти в админку</a></li>
+                        <li class="list-group-item login-into-adminka-main-index"><a href="/admin/adminka">Войти в админку</a></li>
                     <?php } ?>
                     <?php
                 }else{?>

@@ -23,10 +23,16 @@ error_reporting(E_ALL);?>
                             </div>
                             <button class="btn btn-primary login" id="login_in_adminka" type="submit">Log in</button>
                         </form>
+            <script>
+                // $('#login_in_adminka').click(function(){
+                //     location.reload();
+                //     $(location).attr("href", '/admin/adminka');
+                // });
+            </script>
                         <?php
 //                    } else {
 //                        ?>
-<!--                        <!-- ERROR PRIVILEGE-->-->
+<!--                       ERROR PRIVILEGE-->
 <!--                        <div class="alert alert-danger  alert-dismissable error-privilege"-->
 <!--                             id="flash-msg-privilege-orders">-->
 <!--                            <button aria-hidden="true" data-dismiss="alert" class="close" type="button">-->

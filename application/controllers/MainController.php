@@ -13,7 +13,6 @@ class MainController
     }
 	public function actionIndex()
 	{
-//        session_unset();
         session_start();
         require_once(ROOT . '/application/views/main/head.php');
     	require_once(ROOT . '/application/views/main/index.php');
@@ -148,7 +147,6 @@ class MainController
 //        session_unset();
 //        $_SESSION = array();
 //        session_destroy();
-//        session_start();
         require_once(ROOT . '/application/views/main/head.php');
         require_once(ROOT . '/application/views/main/login.php');
         require_once(ROOT . '/application/views/main/footer.php');
