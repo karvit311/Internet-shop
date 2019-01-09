@@ -190,7 +190,6 @@ $('#add_new_product').click(function(){
             return results[1] || 0;
         }
         var department_id_from_url = $.urlParam('department_id');
-        var info = e.target.files;
         var fileName = e.target.files[0].name;
         var fd = new FormData();
         var files = $('#file')[0].files[0];

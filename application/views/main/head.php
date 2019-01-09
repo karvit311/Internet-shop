@@ -80,9 +80,9 @@
 </head>
     <body>
     <style>
-         .dropdown-menu a{
-            background:white;
-        }
+         /*.dropdown-menu a{*/
+            /*background:white;*/
+        /*}*/
     </style>
         <?php
         $ip_address = file_get_contents('https://api.ipify.org');
@@ -96,11 +96,10 @@
             $res_get_carts = $get_cart->get_cart_by_ip_address_Session_email($ip_address,$email);
             $res_get_carts->execute(array($ip_address,$email));
         }
-
-        foreach ($res_get_carts as $res_get_cart){
-        }?>
+        foreach ($res_get_carts as $res_get_cart){}?>
         <div id="head-index">
             <ul id="head-list-my" class="list-group">
+                <li class="list-group-item"><a href="/main/index">Main</a></li>
                 <li class="dropdown list-group-item ">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -116,23 +115,17 @@
                 print_r($_SESSION);
                 //session_start();
                 if (session_status() != PHP_SESSION_NONE) {
-
-                    if ($_SESSION['loggedin'] == 1) {
-                        ?>
+                    if ($_SESSION['loggedin'] == 1) { ?>
                         <li class="list-group-item"><a href="/main/Logout"><?= $_SESSION['name'] ?> (Выйти)</a></li>
-
                     <?php }else{?>
                         <li class="list-group-item"><a href="/main/Signup">Sign up</a></li>
-                <li class="list-group-item"><a href="/main/Login">Login</a></li>
+                        <li class="list-group-item"><a href="/main/Login">Login</a></li>
                    <?php }
                     if($_SESSION['name'] == 'admin'){?>
                         <li class="list-group-item"><a href="/admin/adminka">Войти в админку</a></li>
-                    <?php }
-                        ?>
+                    <?php } ?>
                     <?php
                 }else{?>
-
-
                 <?php }?>
                 <li class="list-group-item mycart"><a href="#"><?= $res_get_cart['total'];?> <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
             </ul>
@@ -140,17 +133,6 @@
             <br>
             <hr >
         </div>
-<script>
-    $(".mycart").each(function() {
-        $(this).on("click", function () {
-            $.getJSON("https://api.ipify.org/?format=json", function(e) {
-                var ip_address = e.ip;
-                $(this).attr('ip_address',ip_address);
-                var ip_address = $(this).attr('ip_address');
-                $(location).attr("href", '/main/cart/?ip_address='+ip_address+"&action=oneclick");
-            });
-        });
-    });
-</script>
-</body>
+    </body>
 </html>
+<script src="/application/js/head.js"></script>

@@ -748,7 +748,6 @@ class AdminController
     }
     public function actionUploadImageNews()
     {
-
         /* Getting file name */
         $filename = $_FILES['file']['name'];
         /* Location */

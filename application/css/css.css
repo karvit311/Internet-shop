@@ -836,6 +836,9 @@ ul ul a {
 .dropdown-menu>li>a {
     margin-right:100px;
 }
+.dropdown-menu a{
+    background:white;
+}
 .place_to_append_small_products{
     margin-left:30px;
     margin-top:20px;

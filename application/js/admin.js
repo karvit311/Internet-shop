@@ -389,7 +389,6 @@ $(document).ready(function() {
                                 if((city_id == el['city_id'])&&(date== el['date'][iii]) ) {
                                     $(this).attr('time', el['time'][iii]);
                                     $(this).val(el['time'][iii]);
-                                    var time = $(this).attr('time');
                                     var date = $(this).attr('date');
                                     if ((date == el['date'][iii]) && (city_id == el['city_id'])) {
                                         $(this).html(el['time'][iii]);
@@ -422,7 +421,6 @@ $(document).ready(function() {
                                                             var address = ely['address'];
                                                             var date = ely['date'];
                                                             var time = ely['time'];
-                                                            var supplier_id = ely['supplier_id'];
                                                             var supplier = ely['supplier'];
                                                             var info = ely['info'];
                                                             var department = ely['department'];
@@ -480,8 +478,6 @@ $(document).ready(function() {
                     var workers = JSON.stringify(response);
                     var obj = JSON.parse(workers);
                     $.each(obj, function(i, el) {
-                        var supplier_id = el['supplier_id'];
-                        var supplier = el['supplier'];
                         var info = el['info'];
                         var department = el['department'];
                         $("#address_alert_adding_delivery").html(selected_address_modal);
@@ -537,9 +533,6 @@ $(document).ready(function() {
                                         url: "/admin/GetDeliveryByDate",
                                         data: "date=" + day,
                                         success: function () {
-                                            var address = el['address'];
-                                            var time = el['time'];
-                                            var date = el['date'];
                                             $(".modal_delivery_date_address").html(el['address']);
                                             $(".modal_delivery_date_time").html(el['time']);
                                             $(".modal_delivery_date_date").html(el['date']);
@@ -1264,7 +1257,6 @@ $(".column-admin .button-edit").each(function(index) {
                         var discount = '1';
                         var value_discount = $('.quantity_discount').val();
                         var end_date_discount = $('#datetimepicker6 input#bday').val();
-                        alert(end_date_discount);
                     }else{
                         var discount = '0';
                         var value_discount = '0';
@@ -1279,7 +1271,6 @@ $(".column-admin .button-edit").each(function(index) {
                         var special_offer = '1';
                         var value_special_offer = $('.description_special_offer').val();
                         var end_date_special_offer = $('#datetimepicker8 input#bday_special_offer').val();
-                        alert(end_date_special_offer);
                     } else {
                         var special_offer = '0';
                         var value_special_offer = '0';
@@ -1290,7 +1281,6 @@ $(".column-admin .button-edit").each(function(index) {
                     } else {
                         var promotion = '0';
                     }
-                    var id = $('.id-modal').val();
                     var name = $('.name_modal_edit').val();
                     var brand = $('.brand_modal_edit').val();
                     var colour = $('.colour_modal_edit').val();
@@ -1298,7 +1288,6 @@ $(".column-admin .button-edit").each(function(index) {
                     var big_description = $('.big_description').val();
                     var adding_info = $('.adding_info').val();
                     var quantity = $('.quantity').val();
-                    var promotion_id = $('#SelectPromotion').find(":selected").text();
                     $.ajax({
                         type: "POST",
                         url: "/admin/UpdateProduct",

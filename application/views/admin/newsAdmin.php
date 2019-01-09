@@ -54,18 +54,18 @@
                                         <div class="modal-body">
                                             <form method="post" class="feedback" >
                                                 <div class="form-group admin_add_new">
-                                                    <label for="FormControlInputTitle">Title:</label>
-                                                    <input type="text" name="title" id="FormControlInputTitle" class="form-control" placeholder="Title">
+                                                    <label for="FormControlInputTitleNewsAdmin-Add">Title:</label>
+                                                    <input type="text" name="title" id="FormControlInputTitleNewsAdmin-Add" class="form-control" placeholder="Title">
                                                     <div id="FormControlInputPhotoDiv">
-                                                        <label for="FormControlInputPhotoNewsAdmin">Photo:</label>
-                                                        <img width="250px" height="300px" id="FormControlInputPhotoNewsAdmin"/>
+                                                        <label for="FormControlInputPhotoNewsAdmin-Add">Photo:</label>
+                                                        <img width="250px" height="300px" id="FormControlInputPhotoNewsAdmin-Add"/>
                                                     </div>
                                                     <div class="modal_small_img_uploads">
                                                         <input type="file" id="file" name="file" />
                                                     </div>
                                                     <div class="admin_text_description_of_new">
                                                         <label for="comment">Description:</label>
-                                                        <textarea class="form-control" rows="5" id="description"></textarea>
+                                                        <textarea class="form-control" rows="5" id="description-news-admin-add"></textarea>
                                                     </div>
                                                 </div>
                                             </form>
@@ -90,18 +90,18 @@
                                         <div class="modal-body">
                                             <form method="post" class="feedback" >
                                                 <div class="form-group admin_update_new">
-                                                    <label for="FormControlInputTitle">Title:</label>
-                                                    <input type="text" name="title" id="FormControlInputTitle" class="form-control" placeholder="Title">
-                                                    <div id="FormControlInputPhotoDiv">
+                                                    <label for="FormControlInputTitleNewsAdmin">Title:</label>
+                                                    <input type="text" name="title" id="FormControlInputTitleNewsAdmin" class="form-control" placeholder="Title">
+                                                    <div class="FormControlInputPhotoDiv">
                                                         <label for="FormControlInputPhotoNewsAdmin">Photo:</label>
                                                         <img width="250px" height="300px" id="FormControlInputPhotoNewsAdmin"/>
                                                     </div>
                                                     <div class="modal_small_img_uploads">
-                                                        <input type="file" id="file" name="file" />
+                                                        <input type="file" class="file" name="file" />
                                                     </div>
                                                     <div class="admin_text_description_of_new">
                                                         <label for="comment">Description:</label>
-                                                        <textarea class="form-control" rows="5" id="description"></textarea>
+                                                        <textarea class="form-control" rows="5" id="description-news-admin"></textarea>
                                                     </div>
                                                 </div>
                                             </form>

@@ -29,8 +29,8 @@ $('.add_new_admin').click(function(){
                                 .css('margin-top','20px')
                             )
                             $('#add_new_new').click(function() {
-                                var title = $('#FormControlInputTitle').val();
-                                var content = $('#description').val();
+                                var title = $('#FormControlInputTitleNewsAdmin-Add').val();
+                                var content = $('#description-news-admin-add').val();
                                 $.ajax({
                                     type: "POST",
                                     url: "/admin/UpdateNewsAdmin",
@@ -44,7 +44,6 @@ $('.add_new_admin').click(function(){
                                         }
                                     },
                                     error: function () {
-                                        // alert("Error");
                                     }
                                 });
                             });
@@ -59,14 +58,13 @@ $('.add_new_admin').click(function(){
         });
     });
     $('#add_new_new').click(function(){
-        var title = $('#FormControlInputTitle').val();
-        var content = $('#description').val();
+        var title = $('#FormControlInputTitleNewsAdmin-Add').val();
+        var content = $('#description-news-admin-add').val();
     });
 
 });
-$('.reviews-edition.delete').on("click", function(e){
+$('.reviews-edition.delete').on("click", function(){
     var iid = $(this).attr('new_id');
-    alert(iid);
     var YOUR_MESSAGE_STRING_CONST = "Are you sure to Delete this worker?";
     confirmDialog(YOUR_MESSAGE_STRING_CONST, function(){
         $.ajax({
@@ -78,7 +76,7 @@ $('.reviews-edition.delete').on("click", function(e){
                     $("#flash-msg-deleting-new").show();
                     setTimeout(function () {
                         location.reload();
-                    }, 4000);
+                    }, 2000);
                 }
             },
             error: function () {
@@ -104,17 +102,16 @@ $('.reviews-edition.edit').click(function(){
     var new_img = $(this).attr('new_img');
     var new_content = $(this).attr('new_content');
     $('#updateModal').modal("show");
-    $('#FormControlInputTitle').val(new_title);
+    $('#FormControlInputTitleNewsAdmin').val(new_title);
+    $('#FormControlInputTitleNewsAdmin').attr('value',new_title);
     $('#FormControlInputPhotoNewsAdmin').attr('src',new_img);
-    $('#description').html(new_content);
+    $('#description-news-admin').html(new_content);
     $('#FormControlInputPhotoNewsAdmin').attr('new_id',new_id);
     $('#update_new').attr('new_id',new_id);
     $('.modal_small_img_uploads input[type=file]').change(function(e) {
         var new_id = $('#FormControlInputPhotoNewsAdmin').attr('new_id');
-        var info = e.target.files;
-        var fileName = e.target.files[0].name;
         var fd = new FormData();
-        var files = $('#file')[0].files[0];
+        var files = $('.file')[0].files[0];
         fd.append('file',files);
         $.ajax({
             url: "/admin/UploadImageNews",
@@ -128,18 +125,17 @@ $('.reviews-edition.edit').click(function(){
                         type: "POST",
                         url: "/admin/UpdatePhotoNewsAdmin",
                         data: "photo=" + response+"&new_id="+new_id,
-                        success: function (res) {
-                            alert(res);
-                            $('#FormControlInputPhotoDiv').find('img').remove();
-                            $('#FormControlInputPhotoDiv').append($('<img>')
+                        success: function () {
+                            $('.FormControlInputPhotoDiv').find('img').remove();
+                            $('.FormControlInputPhotoDiv').append($('<img>')
                                 .attr('src','/application/photo/news/'+response)
                                 .css('width','250px')
                                 .css('height','300px')
                                 .css('margin-top','20px')
                             )
                             $('#update_new').click(function() {
-                                var title = $('#FormControlInputTitle').val();
-                                var content = $('#description').val();
+                                var title = $('#FormControlInputTitleNewsAdmin').val();
+                                var content = $('#description-news-admin').val();
                                 $.ajax({
                                     type: "POST",
                                     url: "/admin/UpdateNewsAdmin",
@@ -167,15 +163,14 @@ $('.reviews-edition.edit').click(function(){
         });
     });
     $('#update_new').click(function() {
-        var title = $('#FormControlInputTitle').val();
-        var content = $('#description').val();
+        var title = $('#FormControlInputTitleNewsAdmin').val();
+        var content = $('#description-news-admin').val();
         var new_id = $(this).attr('new_id');
         $.ajax({
             type: "POST",
             url: "/admin/UpdateNewsAdminWithoutPhoto",
             data: "title=" + title+"&content="+content +"&new_id="+new_id,
             success: function (res) {
-                alert($.trim(res));
                 if($.trim(res) == 1) {
                     $("#flash-msg-adding-new").show();
                     setTimeout(function () {
