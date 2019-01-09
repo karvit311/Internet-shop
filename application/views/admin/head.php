@@ -28,6 +28,8 @@
     <link rel="stylesheet" href="/application/css/css.css">
 
     <link rel="stylesheet" href="/application/css/admin.css">
+    <link rel="stylesheet" href="/application/css/newsAdmin.css">
+    <link rel="stylesheet" href="/application/css/footer.css">
 
 <!--    <script type="text/javascript">-->
 <!--        var jQuery_1_12_2 = $.noConflict(true);-->

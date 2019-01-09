@@ -11,16 +11,16 @@ error_reporting(E_ALL);?>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-    <?php
-    function cutStr($str, $length=50, $postfix='...')
-    {
-        if ( strlen($str) <= $length)
-            return $str;
+        <?php
+        function cutStr($str, $length=50, $postfix='...')
+        {
+            if ( strlen($str) <= $length)
+                return $str;
 
-        $temp = substr($str, 0, $length);
-        return substr($temp, 0, strrpos($temp, ' ') ) . $postfix;
-    }
-    ?>
+            $temp = substr($str, 0, $length);
+            return substr($temp, 0, strrpos($temp, ' ') ) . $postfix;
+        }
+        ?>
         <?php
         $products_pagination = new \Application\models\Product();
         $res_products_pagination = $products_pagination->get_total_by_soon_be_over();
@@ -148,8 +148,7 @@ error_reporting(E_ALL);?>
                                                 $res_total_ratings->execute(array($product_id));
                                                 foreach ($res_total_ratings as $res_total_rating) {}
                                                 $rating = $res_total_rating['total'];
-                                                $percent = $rating*100/5;
-                                                //echo $percent;?>
+                                                $percent = $rating*100/5; ?>
                                                 <div class="star-rating" title="70%">
                                                     <div class="back-stars">
                                                         <i class="fa fa-star" aria-hidden="true"></i>
@@ -228,76 +227,4 @@ error_reporting(E_ALL);?>
         <?php }?>
     </body>
 </html>
-<script>
-    $(".column").hover(
-        function() {
-            var iid = $(this).attr('iid');
-            var real_price = $(this).attr('real_price');
-            var new_price = $(this).attr('price');
-            var email = $(this).attr('email');
-            $(this).append($('<button>')
-                .text('Добавить в корзину')
-                .addClass('btn btn-danger buy')
-                .attr('iid',iid)
-                .attr('price',new_price)
-                .attr('real_price',real_price)
-                .attr('email',email)
-            )
-            $.getJSON("https://api.ipify.org/?format=json", function(e) {
-                var ip_address =  e.ip;
-                $(".buy").each(function() {
-                    $(this).attr('ip_address',ip_address);
-                });
-            });
-            $(".buy").each(function() {
-                $(this).on("click", function () {
-                    var iid = $(this).attr('iid');
-                    var ip_address = $(this).attr('ip_address');
-                    var new_price = $(this).attr('price');
-                    var real_price = $(this).attr('real_price');
-                    var email = $(this).attr('email');
-                    var quantity = 1;
-                    $.ajax({
-                        type: "POST",
-                        url: "/main/AddToCart",
-                        data: "iid=" + iid + "&res_ip_address=" + ip_address+"&quantity="+quantity+"&price="+new_price+"&real_price="+real_price+"&email="+email,
-                        success: function (res) {
-                            if($.trim(res) == 1) {
-                                $("#flash-msg-adding-tocart").show();
-                                setTimeout(function () {
-                                    location.reload();
-                                }, 1000);
-                            }
-                        },
-                        error: function () {
-
-                        }
-                    });
-                });
-            });
-        },
-        function() {
-            $(this).find('button').remove();
-        }
-    );
-</script>
-<script>
-    $("#newsticker").jCarouselLite({
-        vertical: true,
-        hoverPause:true,
-        btnPrev: "#news-prev",
-        btnNext: "#news-next",
-        visible: 3,
-        auto:3000,
-        speed:500
-    });
-</script>
-<script>
-    $(document).ready(function () {
-        $('#sidebarCollapse').on('click', function () {
-            $('#sidebar').toggleClass('active');
-        });
-
-    });
-
-</script>
+<script src="/application/js/main.js"></script>

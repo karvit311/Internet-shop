@@ -61,15 +61,12 @@ error_reporting(E_ALL);?>
             }
             ?>
             <?php
-            function cutStr($str, $length=50, $postfix='...')
-            {
+            function cutStr($str, $length=50, $postfix='...'){
                 if ( strlen($str) <= $length)
                     return $str;
-
                 $temp = substr($str, 0, $length);
                 return substr($temp, 0, strrpos($temp, ' ') ) . $postfix;
-            }
-            ?>
+            } ?>
             <div class="container">
                 <div class="row">
                     <div id="breadcrumbs-products">
@@ -142,10 +139,10 @@ error_reporting(E_ALL);?>
                                     $res_brands->execute(array($department_id));
                                     foreach($res_brands as $res_brand){
                                         if($res_brand['brand']!= ''){?>
-                                        <li>
-                                            <input type="checkbox" value="<?= $res_brand['brand'];?>" id="filter-<?= $res_brand['brand'];?>" checked="checked" />
-                                            <label for="filter-<?= $res_brand['brand'];?>"><?= $res_brand['brand'];?></label>
-                                        </li>
+                                            <li>
+                                                <input type="checkbox" value="<?= $res_brand['brand'];?>" id="filter-<?= $res_brand['brand'];?>" checked="checked" />
+                                                <label for="filter-<?= $res_brand['brand'];?>"><?= $res_brand['brand'];?></label>
+                                            </li>
                                         <?php }?>
                                     <?}?>
                                 </ul>
@@ -164,10 +161,10 @@ error_reporting(E_ALL);?>
                                     $res_colors->execute(array($department_id));
                                     foreach($res_colors as $res_color){
                                         if($res_color['colour'] != ''){?>
-                                        <li>
-                                            <input type="checkbox" value="<?= $res_color['colour'];?>" id="filter-color-<?= $res_color['colour'];?>" checked="checked" />
-                                            <label for="filter-color-<?= $res_color['colour'];?>"><?= $res_color['colour'];?></label>
-                                        </li>
+                                            <li>
+                                                <input type="checkbox" value="<?= $res_color['colour'];?>" id="filter-color-<?= $res_color['colour'];?>" checked="checked" />
+                                                <label for="filter-color-<?= $res_color['colour'];?>"><?= $res_color['colour'];?></label>
+                                            </li>
                                         <?php }?>
                                     <?php }?>
                                 </ul>
@@ -188,26 +185,26 @@ error_reporting(E_ALL);?>
                                 }
                             ?>
                             <?php
-                                if(isset($_SESSION['email']))
-                                    $email = $_SESSION['email'];
-                                else
-                                    $email = 0;
-                                ?>
+                            if(isset($_SESSION['email']))
+                                $email = $_SESSION['email'];
+                            else
+                                $email = 0;
+                            ?>
                             <div class="column <?= $res_product['brand']; ?> <?= $res_product['colour']; ?>" email="<?= $email; ?>" data-price="<?= $new_price; ?>" real_price="<?= $res_product['price'];?>" price="<?= $new_price ?>" iid="<?= $res_product['id'] ?>" value_discount="<?php $about_discount = new \Application\models\Product();
                                  $res_about_discount = $about_discount->get_discount_by_product_id($res_product['id']);
                                  $res_about_discount->execute(array($res_product['id']));
                                  foreach ($res_about_discount as $res_ab_discount) {if($res_product['discount'] ==1){ echo $res_ab_discount['value_discount'];}}?>">
                                 <div class="column-div">
-                                 <?php if ($res_product['discount'] == '1' && $res_ab_discount['value_discount']>0) {
-                                    $about_discount = new \Application\models\Product();
-                                    $res_about_discount = $about_discount->get_discount_by_product_id($res_product['id']);
-                                    $res_about_discount->execute(array($res_product['id']));
-                                    foreach ($res_about_discount as $res_ab_discount) {
-                                        ?>
-                                        <div data-description="Скидка - <?= $res_ab_discount['value_discount'] . '%'; ?>" class="button button-discount"><?= $res_ab_discount['value_discount'] . '%'; ?></div>
-                                        <?php
-                                    }
-                                }?>
+                                     <?php if ($res_product['discount'] == '1' && $res_ab_discount['value_discount']>0) {
+                                        $about_discount = new \Application\models\Product();
+                                        $res_about_discount = $about_discount->get_discount_by_product_id($res_product['id']);
+                                        $res_about_discount->execute(array($res_product['id']));
+                                        foreach ($res_about_discount as $res_ab_discount) {
+                                            ?>
+                                            <div data-description="Скидка - <?= $res_ab_discount['value_discount'] . '%'; ?>" class="button button-discount"><?= $res_ab_discount['value_discount'] . '%'; ?></div>
+                                            <?php
+                                        }
+                                    }?>
                                     <?php if ($res_product['special_offer'] == '1') { ?>
                                         <div data-description="2 в 1" class="button button-2in1">2 в 1</div>
                                     <?php } ?>
@@ -251,8 +248,7 @@ error_reporting(E_ALL);?>
                                             $res_total_ratings->execute(array($product_id));
                                             foreach ($res_total_ratings as $res_total_rating) {}
                                             $rating = $res_total_rating['total'];
-                                            $percent = $rating*100/5;
-                                            //echo $percent;?>
+                                            $percent = $rating*100/5;?>
                                             <div class="star-rating" title="70%">
                                                 <div class="back-stars">
                                                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -322,188 +318,12 @@ error_reporting(E_ALL);?>
                     </div>
                 </div>
             </div>
-                <?php
+            <?php
                 echo $pagination;
-                ?>
+            ?>
             </div>
         <?php }?>
     </body>
 </html>
-<script>
-    $("#newsticker").jCarouselLite({
-        vertical: true,
-        hoverPause:true,
-        btnPrev: "#news-prev",
-        btnNext: "#news-next",
-        visible: 3,
-        auto:3000,
-        speed:500
-    });
-</script>
-<script>
-        load_business_data();
-
-        function load_business_data() {
-            $(".ratings").each(function () {
-                var product_id_for_rating = $(this).attr('iid');
-                $(this).attr('id',product_id_for_rating);
-                $.ajax({
-                    url: "/main/Fetch",
-                    method: "POST",
-                    data: "product_id=" + product_id_for_rating,
-                    success: function (data) {
-                        $(".ratings").each(function () {
-                            var product_id_for_rating_2 = $(this).attr('iid');
-                            if(product_id_for_rating_2 == product_id_for_rating) {
-                                var percent = data*100/5;
-                                $(this,'.empty-stars').css('width','100');
-                                $(this,'.empty-stars').css('color','black');
-                                $(this,'.stars').css('width','30');
-                                $(this).attr('rating',data);
-                            }
-                        });
-                    }
-                });
-            });
-        }
-        $('.rating-all').hover(function(){
-            $('.ratings',this).css('display','none');
-            $('.rating',this).css('display','inline-block');
-        },
-        function(){
-            $('.ratings',this).css('display','inline-block');
-            $('.rating',this).css('display','none');
-        });
-
-</script>
-<script>
-    $("#menu ul").hide();
-    $("#menu li span").click(function() {
-        $("#menu ul:visible").slideUp("normal");
-        if (($(this).next().is("ul")) && (!$(this).next().is(":visible"))) {
-            $(this).next().slideDown("normal");
-        }
-    });
-</script>
-<script>
-    $.getJSON("https://api.ipify.org/?format=json", function(e) {
-        var ip_address =  e.ip;
-        $(".column").attr('ip_address',ip_address);
-        $(".main_img").attr('ip_address',ip_address);
-        $(".name_main_product").attr('ip_address',ip_address);
-    });
-    $('.main_img').click(function(){
-        var id = $(this).attr('iid');
-        var ip_address = $(this).attr('ip_address');
-        $(location).attr("href", '/main/view/?id='+id+"&ip_address="+ip_address);
-    });
-    $('.name_main_product').click(function(){
-        var id = $(this).attr('iid');
-        var ip_address = $(this).attr('ip_address');
-        $(location).attr("href", '/main/view/?id='+id+"&ip_address="+ip_address);
-    });
-</script>
-<script>
-    $(".column").hover(
-        function() {
-            var iid = $(this).attr('iid');
-            var new_price = $(this).attr('price');
-            var real_price = $(this).attr('real_price');
-            var email = $(this).attr('email');
-            var value_discount =$(this).attr('value_discount');
-            $(this)
-                .append($('<button>')
-                    .text('Добавить в корзину')
-                    .addClass('btn btn-danger buy')
-                    .attr('iid',iid)
-                    .attr('price',new_price)
-                    .attr('real_price',real_price)
-                    .attr('email',email)
-                )
-            $.getJSON("https://api.ipify.org/?format=json", function(e) {
-                var ip_address =  e.ip;
-                $(".buy").each(function() {
-                    $(this).attr('ip_address',ip_address);
-                });
-            });
-            $(".buy").each(function() {
-                $(this).on("click", function () {
-                    var iid = $(this).attr('iid');
-                    var ip_address = $(this).attr('ip_address');
-                    var new_price = $(this).attr('price');
-                    var real_price = $(this).attr('real_price');
-                    var email = $(this).attr('email');
-                    var quantity = 1;
-                    $.ajax({
-                        type: "POST",
-                        url: "/main/AddToCart",
-                        data: "iid=" + iid + "&res_ip_address=" + ip_address+"&quantity="+quantity+"&price="+new_price+"&real_price="+real_price+"&email="+email,
-                        success: function (res) {
-                            location.reload();
-                        },
-                        error: function () {
-
-                        }
-                    });
-                });
-            });
-        },
-        function() {
-            $(this).find('button').remove();
-        }
-    );
-</script>
-<script>
-    $(function () {
-        var minPrice = 10,
-        maxPrice = 30000,
-        $filter_lists = $("#filters ul"),
-        $filter_checkboxes = $("#filters :checkbox"),
-        $items = $("#computers div.column");
-        $filter_checkboxes.click(filterSystem);
-        $('#slider-container').slider({
-            range: true,
-            min: minPrice,
-            max: maxPrice,
-            values: [minPrice, maxPrice],
-            slide: function (event, ui) {
-                $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
-                minPrice = ui.values[0];
-                maxPrice = ui.values[1];
-                filterSystem();
-            }
-        });
-        $("#amount").val("$" + minPrice + " - $" + maxPrice);
-        function filterSlider(elem) {
-            var price = parseInt($(elem).data("price"), 10);
-            return price >= minPrice && price <= maxPrice;
-        }
-        function filterCheckboxes(elem) {
-            var $elem = $(elem),
-            passAllFilters = true;
-            $filter_lists.each(function () {
-                var classes = $(this).find(':checkbox:checked').map(function () {
-                    return $(this).val();
-                }).get();
-                var passThisFilter = false;
-                $.each(classes, function (index, item) {
-                    if ($elem.hasClass(item)) {
-                        passThisFilter = true;
-                        return false; //stop inner loop
-                    }
-                });
-                if (!passThisFilter) {
-                    passAllFilters = false;
-                    return false; //stop outer loop
-                }
-            });
-            return passAllFilters;
-        }
-        function filterSystem() {
-            $items.hide().filter(function () {
-                return filterSlider(this) && filterCheckboxes(this);
-            }).show();
-        }
-    });
-</script>
+<script src="/application/js/main-products.js"></script>
 

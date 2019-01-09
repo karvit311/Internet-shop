@@ -1,0 +1,8 @@
+.green:hover,:active{
+    cursor:pointer;
+    color:green;
+}
+.delete:hover,:active{
+    cursor:pointer;
+    color:red;
+}

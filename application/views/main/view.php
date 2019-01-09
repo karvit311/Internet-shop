@@ -8,6 +8,7 @@ error_reporting(E_ALL);?>
     <head>
         <title>Products</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/application/css/view-index.css">
     </head>
     <body>
         <?php
@@ -143,51 +144,6 @@ error_reporting(E_ALL);?>
                                     $total_rate = $res_all_rating_for_this_product['total'];
                                     ?>
                                     <div>Всего проголосовало: <span class="view-total-rated"><?php printf('%d', $total_rate);?></span></div>
-                                    <script>
-                                        $.getJSON("https://api.ipify.org/?format=json", function(e) {
-                                            var ip_address =  e.ip;
-                                            $(".my-rating-view").attr('ip_address',ip_address);
-                                        });
-                                        $(".my-rating-view").starRating({
-                                            starSize: 25,
-                                            callback: function(currentRating, $el){
-                                                var iid = $(".my-rating-view").attr('iid');
-                                                var ip_address = $('.my-rating-view').attr('ip_address');
-                                                $.ajax({
-                                                    url: "/main/InsertRating",
-                                                    method: "POST",
-                                                    data: "product_id=" + iid+"&rate="+currentRating+"&ip_address="+ip_address,
-                                                    success: function (data) {
-                                                         var total_rated = $('.view-total-rated').text();
-                                                         var res_total_rated =1;
-                                                         res_total_rated += Number(total_rated);
-                                                         $('.view-total-rated').text(res_total_rated);
-                                                         var sum_all_rate = $('.view-avg-rate-span').attr('sum_all_rate');
-                                                         sum_all_rate = Number(sum_all_rate);
-                                                         sum_all_rate += Number(currentRating);
-                                                         var res_avg = sum_all_rate/res_total_rated;
-                                                         $('.view-avg-rate-span').text(res_avg);
-                                                    }
-                                                });
-
-                                                // make a server call here
-                                            }
-                                        });
-                                        load_business_data();
-                                        function load_business_data() {
-                                            var product_id_for_rating = $(".my-rating-view").attr('iid');
-                                            $(this).attr('id',product_id_for_rating);
-                                            $.ajax({
-                                                url: "/main/Fetch",
-                                                method: "POST",
-                                                data: "product_id=" + product_id_for_rating,
-                                                success: function (data) {
-                                                    $(".my-rating-view").starRating('setRating', data);
-                                                }
-                                            });
-                                        }
-                                        // alert($(".my-rating").starRating('getRating'));
-                                    </script>
                                 </li>
                                 <li class="view-right-third-block">
                                     <p id="right-block-product-view-big-description"><?= $res_product['big_description'];?></p>
@@ -198,14 +154,12 @@ error_reporting(E_ALL);?>
                         </div>
                     </div>
                 </div>
-                <?php }?>
-<!--            </div>-->
+            <?php }?>
             <div id="left-block-small-images">
                 <?php foreach($res_small_images as $res_small_image){?>
                     <img src="/application/photo/small_images/<?= $res_small_image['department_id'];?>/<?= $res_small_image['name'];?>"  class="img-responsive product-view-img-small" department_id="<?= $res_small_image['department_id']?>" name="<?= $res_small_image['name']?>"  width="110" height="110">
                 <?php }?>
             </div>
-
             <div id="product-view-tabs">
                 <ul class="nav nav-pills">
                     <li class="active"><a data-toggle="pill" href="#home">Описание</a></li>
@@ -218,7 +172,6 @@ error_reporting(E_ALL);?>
                 foreach ($res_products_description as $res_product_description){?>
                 <div class="tab-content">
                     <div id="home" class="tab-pane fade in active">
-
                         <h4>Описание: <?= $res_product_description['name'];?></h4>
                         <p ><?= $res_product_description['big_description']?></p>
                     </div>
@@ -239,25 +192,6 @@ error_reporting(E_ALL);?>
                 <div class="review-view-main-information">
                     <p class="review-view-main-information-information">The review will append after to be approved!</p>
                 </div>
-                <style>
-                    .review-view-main-information{
-                        display:none;
-                        margin-left:240px;
-                        margin-top:-60px;
-                        font-size:14px;
-                        font-weight:bold;
-                        border:1px solid #ddd;
-                        padding:10px;
-                        width:340px;
-                    }
-                    .review-view-main-information-success{
-                        color:green;
-                    }
-                    .review-view-main-information-information{
-                        color:#b1b1b7;
-
-                    }
-                </style>
                 <ul>
                     <li>
                         <div class="glyphicon glyphicon-chevron-right"></div>
@@ -284,155 +218,4 @@ error_reporting(E_ALL);?>
         </div>
     </body>
 </html>
-<script>
-    $('#quantity').change(function(){
-        var quantity = $(this).val();
-        $('#right-block-product-view-button-to-buy').attr('quantity',quantity);
-        var price = $('#right-block-product-view-button-to-buy').attr('price');
-        var final_price = price*quantity;
-        var final_price = parseFloat(final_price);
-        var final_price = final_price.toFixed(2);
-        $('#right-block-product-view-button-to-buy').attr('final_price',final_price);
-        $('.price_products-view').html(final_price+" грн");
-    });
-</script>
-<script>
-    $('#right-block-product-view-button-to-buy').click(function(){
-        var ip_address = $(this).attr('ip_address');
-        var quantity = $('#quantity').val();
-        var iid = $(this).attr('iid');
-        var new_price = $(this).attr('final_price');
-        var real_price = $(this).attr('real_price');
-        $.ajax({
-            type: "POST",
-            url: "/main/AddToCart",
-            data: "iid=" + iid + "&res_ip_address=" + ip_address+"&quantity="+quantity+"&price="+new_price+"&real_price="+real_price,
-            success: function (res) {
-                $(location).attr("href", '/main/cart/?ip_address='+ip_address+"&action=oneclick");
-            },
-            error: function () {
-            }
-        });
-    });
-</script>
-<script>
-    $('.leave_the_comment').click(function(){
-        $('#add_new_review').modal("show");
-        $.getJSON("https://api.ipify.org/?format=json", function(e) {
-            var ip_address =  e.ip;
-            $("#add_new_review_submit").each(function() {
-                $(this).attr('ip_address',ip_address);
-            });
-        });
-        $('#add_new_review_submit').click(function(){
-            var name = $('#name').val();
-            var review = $('#review').val();
-            var ip_address = $(this).attr('ip_address');
-            var product_id = $(this).attr('product_id');
-            $.ajax({
-                type: "POST",
-                url: "/main/AddNewReview",
-                data: "name=" + name + "&review=" + review+"&ip_address="+ip_address+"&product_id="+product_id,
-                success: function (res) {
-                    if($.trim(res) == 1) {
-                        $('.review-view-main-information').css('display','block');
-                        setTimeout(function () {
-                            $('.review-view-main-information').fadeOut(2000);
-                            location.reload();
-                        }, 2000);
-                    }
-                },
-                error: function () {
-                    alert("Error");
-                }
-            });
-        });
-    });
-</script>
-<script>
-    $(document).ready(function() {
-        $('#left-block-prod-view-make-bigger span').click( function(){
-            var main_photo = $("#pro-view-main-image").find('img').attr('src');
-            var image_id = $("#pro-view-main-image").find('img').attr('image_id');
-            var department_id = $(this).attr('department_id');
-            var name_product = $(this).attr('name_product');
-            $.ajax({
-                type: "POST",
-                url: "/main/GetImage",
-                data: "image_id=" + image_id,
-                dataType: "json",
-                success: function (res) {
-                    var images = JSON.stringify(res);
-                    var obj = JSON.parse(images);
-                    $.each(obj, function(iy, ely) {
-                        var name = ely['name'];
-                        var id = ely['id'];
-                        $('#view_modal_images').modal("show");
-                        $(".pro-view-modal-small-images").each(function() {
-                            $('#product-view-modal-img').find('img').attr('src',main_photo);
-                            $('.pro-view-modal-small-images').append($('<ul><li>')
-                                .prepend($('<img>',{id:'dd',src:'/application/photo/small_images/'+department_id+'/' + name, width:'70px',height:'70px'})
-                                .addClass('pro-view-modal-small_images_img')
-                                )
-                            );
-                        });
-                        $('.pro-view-modal-small_images_img').hover(function(){
-                            $(this).css('width', '72px');
-                            $(this).css('height', '72px');
-                            var src = $(this).attr('src');
-                            $("#product-view-modal-img").find('img').attr('src', src);
-                        }, function() {
-                            $("#product-view-modal-img").find('img').attr('src', src);
-                            $(this).css('width', '70px');
-                            $(this).css('height', '70px');
-                        });
-                    });
-                },
-                error: function () {
-                    alert("Error");
-                }
-            });
-        });
-        $('.product-view-img-small').hover(function(){
-            $(this).css('width', '112px');
-            $(this).css('height', '112px');
-            $(this).css('border','1px solid rosybrown');
-            var name = $.trim($(this).attr('name'));
-            var department_id = $(this).attr('department_id');
-            $("#pro-view-main-image").find('img').attr('src', '/application/photo/small_images/'+department_id+'/'+name);
-        }, function() {
-            var name = $.trim($(this).attr('name'));
-            var department_id = $(this).attr('department_id');
-            var image_id = $("#pro-view-main-image").find('img').attr('image_id');
-            // alert(image_id);
-            $("#pro-view-main-image").find('img').attr('src', '/application/photo/'+department_id+'/'+image_id);
-            $(this).css('width', '110px');
-            $(this).css('height', '110px');
-            $(this).css('border','1px solid white');
-        });
-    });
-</script>
-<script>
-    $(document).ready(function(){
-        $('.customer-logos').slick({
-            slidesToShow: 4,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 1500,
-            arrows: false,
-            dots: false,
-            pauseOnHover: false,
-            responsive: [{
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 4
-                }
-            }, {
-                breakpoint: 520,
-                settings: {
-                    slidesToShow: 3
-                }
-            }]
-        });
-    });
-</script>
+<script src="/application/js/view-index.js"></script>

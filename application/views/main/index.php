@@ -15,7 +15,6 @@ error_reporting(E_ALL);?>
         <?php
         $departments = new \Application\models\Department();
         $res_departments = $departments->get_departments();
-       // print_r($_SESSION);
         ?>
         <div class="container">
             <div class="row">
@@ -26,7 +25,6 @@ error_reporting(E_ALL);?>
                 </div>
                 <div id="right-block-container-menu">
                     <ul id="right-block-container-menu-ul">
-
                     </ul>
                 </div>
                 <nav class="navbar navbar-default sidebar" role="navigation">
@@ -39,7 +37,6 @@ error_reporting(E_ALL);?>
                                 <span class="icon-bar"></span>
                             </button>
                         </div>
-
                         <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
                             <ul class="nav navbar-nav">
                                 <?php foreach($res_departments as $res_department){
@@ -56,49 +53,4 @@ error_reporting(E_ALL);?>
         </div>
     </body>
 </html>
-<script>
-    $('#right-block-container-menu-ul')
-        .find("li").remove();
-    $('.left-block-menu-index').hover(function(){
-        $('#right-block-container-menu').css('background-image', 'url("")');
-        $('#right-block-container-menu').css('background', '#ffcaca');
-        var department_id = $(this).attr('department_id');
-        $.ajax({
-            type: "POST",
-            url: "/main/GetChildOfDepartment",
-            data:  "main_department_id=" + department_id,
-            dataType: "json",
-            success: function (response) {
-                $('#right-block-container-menu-ul')
-                    .find("li").remove();
-                for(var i in response) {
-                    console.log(response[i]);
-                    $.each($(response[i]), function (iy, ely) {
-                        var id = ely['id'];
-                        var department = ely['department'];
-                        var photo = ely['photo'];
-                        $('#right-block-container-menu-ul')
-                        .append($('<li>')
-                            .addClass('right-block-menu-index')
-                            .append($("<a>")
-                                .attr('href','/main/products/?department_id='+ id+'&page=1')
-                                .prepend($('<img>',{id:'theImg',src:'/application/photo/department/' + photo})
-                                    .addClass('right-block-menu-index-img')
-                                )
-                                .append($('<div>')
-                                    .addClass('right-block-img-text-block')
-                                    .text(department)
-                                )
-                            )
-                        )
-                    });
-                }
-            },
-            error: function () {
-                alert("Error");
-            }
-        });
-        $('#right-block-container-menu-ul')
-            .find("li").remove();
-    });
-</script>
+<script src="/application/js/main.js"></script>

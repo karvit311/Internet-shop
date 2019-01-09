@@ -10,7 +10,6 @@ if (isset($_POST['name'])) {
     $email = strip_tags($_POST['email']);
     $salary = strip_tags($_POST['salary']);
     $post_id = strip_tags($_POST['post_id']);
-//    $post_id = 1;
     $new_worker = new \Application\models\Workers();
     $res_new_worker = $new_worker->insert_worker($lastname, $name, $patronymic, $birth_day, $salary, $email, $post_id);
     echo "<strong>Name</strong>: ".$name."</br>";

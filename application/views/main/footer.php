@@ -4,20 +4,34 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);?>
 
 <style>
-    .my-footer{
-        background:#515456;
-        color:#a9a1a1;
-        margin-top:315px;
-    }
-    .footer_hr{
-        border-top:1px solid #6f6b6b;
-    }
-    .my-footer li a{
-        color:#a9a1a1;
-    }
-    .my-footer h5{
-        color:#f9e2e2;
-    }
+    /*.my-footer{*/
+        /*background:#515456;*/
+        /*color:#a9a1a1;*/
+        /*margin-top:315px;*/
+    /*}*/
+    /*.footer_hr{*/
+        /*border-top:1px solid #6f6b6b;*/
+    /*}*/
+    /*.my-footer li a{*/
+        /*color:#a9a1a1;*/
+    /*}*/
+    /*.my-footer h5{*/
+        /*color:#f9e2e2;*/
+    /*}*/
+    /*.footer_hr_second{*/
+        /*!*margin:0;*!*/
+        /*border-top:1px solid #6f6b6b;*/
+    /*}*/
+    /*.footer_of_footer{*/
+        /*background:#2d3031;*/
+        /*!*margin-top:5px;*!*/
+    /*}*/
+    /*.list_of_contact_footer li{*/
+        /*color:#7a9dbb*/
+    /*}*/
+    /*.button_footer{*/
+        /*border-radius: 50%;*/
+    /*}*/
 </style>
 <!-- Footer -->
 <footer class="my-footer ">
@@ -99,20 +113,7 @@ error_reporting(E_ALL);?>
         </li>
     </ul>
     <style>
-        .footer_hr_second{
-            /*margin:0;*/
-            border-top:1px solid #6f6b6b;
-        }
-        .footer_of_footer{
-            background:#2d3031;
-            /*margin-top:5px;*/
-        }
-        .list_of_contact_footer li{
-            color:#7a9dbb
-        }
-        .button_footer{
-            border-radius: 50%;
-        }
+
     </style>
     <!-- Call to action -->
 

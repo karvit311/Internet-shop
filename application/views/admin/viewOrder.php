@@ -8,17 +8,8 @@ if ($_SESSION['admin'] = "admin") {
                 <head>
                     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
                     <title>Панель управления - Просмотр заказов</title>
+                    <link rel="stylesheet" href="/application/css/viewOrder.css">
                 </head>
-                <style>
-                    .green:hover,:active{
-                        cursor:pointer;
-                        color:green;
-                    }
-                    .delete:hover,:active{
-                        cursor:pointer;
-                        color:red;
-                    }
-                </style>
                 <body>
                     <div id="block-body-admin">
                         <?php
@@ -55,7 +46,7 @@ if ($_SESSION['admin'] = "admin") {
                                     if ($row['order_confirmed'] == 'yes')
                                     {
                                         $status = '<span class="green">Обработан</span>';
-                                    } else{
+                                    } else {
                                         $status = '<span class="red">Не обработан</span>';
                                     }
                                     ?>
@@ -109,7 +100,6 @@ if ($_SESSION['admin'] = "admin") {
                                         <th>Контакты</th>
                                         <th>Примечание</th>
                                         </tr>
-        
                                         <tr class="res_view_order">
                                         <td  align="center"  >'.$row["order_fio"].'</td>
                                         <td  align="CENTER" >'.$row["order_address"].'</td>
@@ -147,46 +137,4 @@ if ($_SESSION['admin'] = "admin") {
     header('Location: /main/Login');
 }
 ?>
-<script>
-    $('.view-order-link .green').click(function(){
-        alert('jkj');
-        var order_id = $(this).attr('order_id');
-        $.ajax({
-            type:"post",
-            url:"/admin/acceptOrderAdmin",
-            data:"order_id="+order_id,
-            success:function(response){
-                alert(response);
-                if($.trim(response) == 1) {
-                    $("#flash-msg-accept-order").show();
-                    setTimeout(function () {
-                        location.reload();
-                    }, 1000);
-                }
-            },
-            error:function(){
-
-            }
-        })
-    });
-    $('.view-order-link .delete').click(function(){
-        var order_id = $(this).attr('order_id');
-        $.ajax({
-            type:"post",
-            url:"/admin/deleteOrderAdmin",
-            data:"order_id="+order_id,
-            success:function(response){
-                if($.trim(response) == 1) {
-                    $("#flash-msg-deleting-order").show();
-                    setTimeout(function () {
-                        location.reload();
-                    }, 1000);
-                }
-            },
-            error:function(){
-
-            }
-        })
-    });
-
-</script>
+<script src="/application/js/viewOrder.js"></script>

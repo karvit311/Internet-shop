@@ -267,8 +267,7 @@ error_reporting(E_ALL);?>
                                     </div>
                                 </div> <!-- end edit modal -->
                                 <?php
-                            } else {
-                                ?>
+                            } else { ?>
                                 <!-- ERROR PRIVILEGE-->
                                 <div class="alert alert-danger  alert-dismissable error-privilege"
                                      id="flash-msg-privilege-orders">

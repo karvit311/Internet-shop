@@ -272,11 +272,5 @@ $_SESSION['urlpage'] = "<a href='/admin/index'>Заказы</a>";?>
         </div>
     </body>
 </html>
-<script>
-    $(document).ready(function() {
-        $('#select-links').click(function () {
-            $("#list-links-sort").slideToggle(200);
-        });
-    });
-</script>
+<script src="/application/js/orders.js"></script>
 

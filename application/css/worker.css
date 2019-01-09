@@ -1,0 +1,24 @@
+h3{
+    margin-top:30px;
+    margin-bottom:30px;
+    font-weight:bold;
+}
+#treeview{
+    margin-top:50px;
+    margin-bottom:60px;
+}
+.dataTables_wrapper {
+    border:1px solid rosybrown;
+}
+#example{
+    float:left;
+    display:inline-block;
+}
+.activeClass{
+    background: red;
+    color:darkgreen;
+}
+.hover{
+    background: greenyellow;
+    color:darkgreen;
+}

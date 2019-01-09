@@ -34,6 +34,7 @@ class AdminController
     }
     public function actionviewOrder()
     {
+        session_start();
         require_once(ROOT . '/application/views/admin/head.php');
         require_once(ROOT . '/application/views/admin/viewOrder.php');
         require_once(ROOT . '/application/views/admin/footer.php');
@@ -90,7 +91,7 @@ class AdminController
     }
     public function actionBeOver()
     {
-        //session_start();
+        session_start();
         require_once(ROOT . '/application/views/admin/head.php');
         require_once(ROOT . '/application/views/admin/be_over.php');
         require_once(ROOT . '/application/views/admin/footer.php');
@@ -396,6 +397,7 @@ class AdminController
     }
     public function actionSpecialOffers()
     {
+        session_start();
         require_once(ROOT . '/application/views/admin/head.php');
         require_once(ROOT . '/application/views/admin/special_offers.php');
         require_once(ROOT . '/application/views/admin/footer.php');
@@ -403,6 +405,7 @@ class AdminController
     }
     public function actionDiscount()
     {
+        session_start();
         require_once(ROOT . '/application/views/admin/head.php');
         require_once(ROOT . '/application/views/admin/discount.php');
         require_once(ROOT . '/application/views/admin/footer.php');
@@ -410,6 +413,7 @@ class AdminController
     }
     public function actionPromotion()
     {
+        session_start();
         require_once(ROOT . '/application/views/admin/head.php');
         require_once(ROOT . '/application/views/admin/promotion.php');
         require_once(ROOT . '/application/views/admin/footer.php');

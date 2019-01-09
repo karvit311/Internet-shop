@@ -27,6 +27,7 @@
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="/application/css/css.css">
+    <link rel="stylesheet" href="/application/css/footer.css">
 
 
 <!--    <script type="text/javascript">-->
@@ -100,7 +101,6 @@
         }?>
         <div id="head-index">
             <ul id="head-list-my" class="list-group">
-<!--                <li class="list-group-item"><a href="/main/NewsOfCompany/?">News of company</a></li>-->
                 <li class="dropdown list-group-item ">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products <span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -135,10 +135,6 @@
 
                 <?php }?>
                 <li class="list-group-item mycart"><a href="#"><?= $res_get_cart['total'];?> <span class="glyphicon glyphicon-shopping-cart"></span></a></li>
-<!--                <li class="list-group-item"><a href="/main/Signup">Sign up</a></li>-->
-<!--                <li class="list-group-item"><a href="/main/Login">Login</a></li>-->
-<!--                <li class="list-group-item mycart"><a href="/main/cart">--><?//= $res_get_cart['total'];?><!-- <span class="glyphicon glyphicon-shopping-cart"></span></a></li>-->
-
             </ul>
             <br>
             <br>
@@ -153,8 +149,6 @@
                 var ip_address = $(this).attr('ip_address');
                 $(location).attr("href", '/main/cart/?ip_address='+ip_address+"&action=oneclick");
             });
-
-
         });
     });
 </script>

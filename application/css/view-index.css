@@ -1,0 +1,16 @@
+.review-view-main-information{
+    display:none;
+    margin-left:240px;
+    margin-top:-60px;
+    font-size:14px;
+    font-weight:bold;
+    border:1px solid #ddd;
+    padding:10px;
+    width:340px;
+}
+.review-view-main-information-success{
+    color:green;
+}
+.review-view-main-information-information{
+    color:#b1b1b7;
+}

@@ -1479,8 +1479,18 @@ ul ul a {
     top: 0;
 }
 /*RATER -END-*/
-
-
+/*ABOUT*/
+.main_block_about{
+    display: inline-block;
+}
+.main_block_about ul li{
+    list-style:none;
+}
+.main_block_about {
+    color:#676b6f;
+    text-decoration:none;
+}
+/*ABOUT _END_*/
 
 
 

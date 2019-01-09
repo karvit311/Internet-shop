@@ -61,7 +61,6 @@ error_reporting(E_ALL);?>
                     <h4 ><?= $res_essense_of_promotion['title'];?></h4>
                     <p><?= $res_essense_of_promotion['value_promotion'];?></p>
                     <p class="end_date_promotion">Истекает <?= $end_date;?></p>
-                    <?php // }?>
                 </div>
                 <div id="computers" >
                     <?php foreach ($res_products as $res_product) {
@@ -109,55 +108,4 @@ error_reporting(E_ALL);?>
         <?php }?>
     </body>
 </html>
-<script>
-    $.getJSON("https://api.ipify.org/?format=json", function(e) {
-        var ip_address =  e.ip;
-        $(".column").attr('ip_address',ip_address);
-    });
-    $('.column').click(function(){
-        var id = $(this).attr('iid');
-        var ip_address = $(this).attr('ip_address');
-        $(location).attr("href", '/main/view/?id='+id+"&ip_address="+ip_address);
-    });
-</script>
-<script>
-    $(".column").hover(
-        function() {
-            var iid = $(this).attr('iid');
-            var price = $(this).attr('price');
-            $(this).append($('<button>')
-                .text('Добавить в корзину')
-                .addClass('btn btn-danger buy')
-                .attr('iid',iid)
-                .attr('price',price)
-            )
-            $.getJSON("https://api.ipify.org/?format=json", function(e) {
-                var ip_address =  e.ip;
-                $(".buy").each(function() {
-                    $(this).attr('ip_address',ip_address);
-                });
-            });
-            $(".buy").each(function() {
-                $(this).on("click", function () {
-                    var iid = $(this).attr('iid');
-                    var ip_address = $(this).attr('ip_address');
-                    var price = $(this).attr('price');
-                    var quantity = 1;
-                    $.ajax({
-                        type: "POST",
-                        url: "/main/AddToCart",
-                        data: "iid=" + iid + "&res_ip_address=" + ip_address+"&quantity="+quantity+"&price="+price,
-                        success: function (res) {
-                        },
-                        error: function () {
-
-                        }
-                    });
-                });
-            });
-        },
-        function() {
-            $(this).find('button').remove();
-        }
-    );
-</script>
+<script src="/application/js/main.js"></script>
