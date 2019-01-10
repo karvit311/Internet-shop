@@ -20,6 +20,13 @@ error_reporting(E_ALL);?>
         $res_small_images = $small_images->get_small_image_by_product_id($id);
         $res_small_images->execute(array($id));
         ?>
+        <?php
+        function cutStr($str, $length=50, $postfix='...'){
+            if ( strlen($str) <= $length)
+                return $str;
+            $temp = substr($str, 0, $length);
+            return substr($temp, 0, strrpos($temp, ' ') ) . $postfix;
+        } ?>
         <div id="view_modal_images"  class="modal">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
@@ -145,9 +152,15 @@ error_reporting(E_ALL);?>
                                     ?>
                                     <div>Всего проголосовало: <span class="view-total-rated"><?php printf('%d', $total_rate);?></span></div>
                                 </li>
-                                <li class="view-right-third-block">
-                                    <p id="right-block-product-view-big-description"><?= $res_product['big_description'];?></p>
-                                    <button type="button" id="right-block-product-view-button-to-buy" real_price="<?= $res_product['price'];?>" price="<?= $new_price;?>" iid="<?= $res_product['productId'];?>" ip_address="<?= $_GET['ip_address'];?>" class="btn btn-danger btn-lg">Купить</button>
+                                <?php
+                                if(isset($_SESSION['email']))
+                                    $email = $_SESSION['email'];
+                                else
+                                    $email = 0;
+                                ?>
+                                <li class="view-right-third-block" style="font-size:14px;height:130px;margin-top:20px;">
+                                    <?php echo cutStr($res_product['big_description'], $length=700, $postfix='...');?>
+                                    <button style=" margin-top:20px;" type="button" id="right-block-product-view-button-to-buy" email="<?= $email;?>" final_price="<?= $res_product['price'];?>" real_price="<?= $res_product['price'];?>" price="<?= $new_price;?>" iid="<?= $res_product['productId'];?>" ip_address="<?= $_GET['ip_address'];?>" class="btn btn-danger btn-lg">Купить</button>
                                     <div id="view-product-articul">Арт.:<?= $res_product['productId']?></div>
                                 </li>
                             </ul>

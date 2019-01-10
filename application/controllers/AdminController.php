@@ -282,13 +282,13 @@ class AdminController
         header('Location: /admin/index');
     }
 
-    public function actionSignupData()
-    {
-        if(isset($_POST['name'])){
-            $name = $_POST['name'];
-            echo $name;
-        }
-    }
+//    public function actionSignupData()
+//    {
+//        if(isset($_POST['name'])){
+//            $name = $_POST['name'];
+//            echo $name;
+//        }
+//    }
 
     public function actiondeleteClient()
     {
@@ -1724,63 +1724,6 @@ class AdminController
                  $sub_data["parent_id"] = $post["post_id"];
              }
              $data[] = $sub_data;
-        }
-        foreach($data as $key => &$value)
-        {
-            $output[$value["id"]] = &$value;
-        }
-        foreach($data as $key => &$value)
-        {
-            if($value["parent_id"] && isset($output[$value["parent_id"]]))
-            {
-                $output[$value["parent_id"]]["nodes"][] = &$value;
-            }
-        }
-        foreach($data as $key => &$value)
-        {
-            if($value["parent_id"] && isset($output[$value["parent_id"]]))
-            {
-                unset($data[$key]);
-            }
-        }
-        echo json_encode($data);
-    }
-
-    public function actionTreeviewDepartment()
-    {
-        $all_departments = new \Application\models\Departmnet();
-        $departments = $all_departments->get_departments();
-        foreach($departments as $department) {
-            $suppliers = new \Application\models\Workers();
-            $posts_res = $suppliers->get_post($worker['post_id']);
-            $posts_res->execute(array($worker['post_id']));
-            foreach ($posts_res as $post) {
-                $initial_lastname = utf8_encode($worker['lastname']);
-                $initial_lastname = utf8_decode($initial_lastname);
-                $initial_name = utf8_encode($worker['name']);
-                $initial_name = mb_substr($initial_name,0,2);
-                $initial_name = utf8_decode($initial_name);
-                $initial_patronymic = utf8_encode($worker['patronymic']);
-                $initial_patronymic = mb_substr($initial_patronymic,0,2);
-                $initial_patronymic = utf8_decode($initial_patronymic);
-                $initial = $initial_lastname.'. '.$initial_name.'. '.$initial_patronymic;
-                $sub_data["id"] = $worker["id"];
-                $res = $initial.' "'.$post['post'].'" ('.$worker['salary'].' $)
-                    <button type="button"  title="удалить" style="float: right;" class="btn btn-default btn-sm">
-                    <span class="glyphicon glyphicon-trash" iid="'.$worker['id'].'"></span>
-                    </button>
-                    <button type="button" data-iid="'.$worker['id'].'" id="update_worker_button" title="редактировать" data-toggle="modal" data-target="#updateModal"  style="float: right;" class="btn btn-default btn-sm">
-                    <span class="glyphicon glyphicon-pencil" data-iid="'.$worker['id'].'"></span>
-                    </button>
-                    <button type="button"  title="добавить нового работника" style="float: right;" class="btn btn-default btn-sm">
-                    <span class="glyphicon glyphicon-plus" data-toggle="modal" data-target="#myModal"  iid="'.$worker['id'].'"></span>
-                    </button>
-                 ';
-                $sub_data["name"] = $res;
-                $sub_data["text"] = $res;
-                $sub_data["parent_id"] = $post["post_id"];
-            }
-            $data[] = $sub_data;
         }
         foreach($data as $key => &$value)
         {

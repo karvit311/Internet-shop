@@ -54,11 +54,12 @@ $('#right-block-product-view-button-to-buy').click(function(){
     var iid = $(this).attr('iid');
     var new_price = $(this).attr('final_price');
     var real_price = $(this).attr('real_price');
+    var email = $(this).attr('email');
     $.ajax({
         type: "POST",
         url: "/main/AddToCart",
-        data: "iid=" + iid + "&res_ip_address=" + ip_address+"&quantity="+quantity+"&price="+new_price+"&real_price="+real_price,
-        success: function () {
+        data: "iid=" + iid + "&res_ip_address=" + ip_address+"&quantity="+quantity+"&price="+new_price+"&real_price="+real_price+"&email="+email,
+        success: function (res) {
             $(location).attr("href", '/main/cart/?ip_address='+ip_address+"&action=oneclick");
         },
         error: function () {
