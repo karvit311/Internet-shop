@@ -401,14 +401,6 @@ class AdminController
         }
     }
 
-    public function actionLogin()
-    {
-       // session_unset();
-        require_once(ROOT . '/application/views/admin/head.php');
-        require_once(ROOT . '/application/views/admin/login.php');
-        require_once(ROOT . '/application/views/admin/footer.php');
-    }
-
     public function actionSpecialOffers()
     {
         session_start();
@@ -441,55 +433,7 @@ class AdminController
         require_once(ROOT . '/application/views/admin/footer.php');
 
     }
-    public function actionView()
-    {
-        session_start();
-        $id = $_GET['id'];
-            $ip_address_user = $_SERVER['REMOTE_ADDR'];
-            $users = new \Application\models\Users();
-            $check_if_exists = $users->check_if_exists($ip_address_user);
-            $check_if_exists->execute(array($ip_address_user));
-            $count = $check_if_exists->fetchColumn();
-            if ($count > 0) {
-                $users_by_ip_address = new \Application\models\Users();
-                $res_users_by_ip_address = $users_by_ip_address->get_user_by_ip_address($ip_address_user);
-                $res_users_by_ip_address->execute(array($ip_address_user));
-                foreach($res_users_by_ip_address as $user){
-                    $ids_viewed_product = new \Application\models\ViewedProduct();
-                    $check_if_exists_ids = $ids_viewed_product->check_if_exists_viewed_id($ip_address_user, $id);
-                    $check_if_exists_ids->execute(array($ip_address_user, $id));
-                    $count_product = $check_if_exists_ids->fetchColumn();
-                    if ($count_product > 0) {
-                    } else {
-                        $id_of_product = $_GET['id'];
-                        $insert_viewed_product = new \Application\models\ViewedProduct();
-                        $insert_viewed_product->insert_ids_viewed_products($user['id'], $id_of_product,$ip_address_user);
-                    }
-                }
-            } else {
-                $id_of_product = $_GET['id'];
-                $update_exists_user = new \Application\models\Users();
-                $update_exists_user->insert_guest_user($ip_address_user);
-                $last_insert_id = \Application\core\App::$app->lastInsertId();
-                $insert_viewed_product = new \Application\models\ViewedProduct();
-                $insert_viewed_product->insert_ids_viewed_products($last_insert_id,$id_of_product);
-            }
-        require_once(ROOT . '/application/views/admin/head.php');
-        require_once(ROOT . '/application/views/admin/view.php');
-        require_once(ROOT . '/application/views/admin/footer.php');
-    }
-    public function actionDepartment()
-    {
-        require_once(ROOT . '/application/views/admin/head.php');
-        require_once(ROOT . '/application/views/admin/department.php');
-        require_once(ROOT . '/application/views/admin/footer.php');
-    }
-    public function actionSalary()
-    {
-        require_once(ROOT . '/application/views/admin/head.php');
-        require_once(ROOT . '/application/views/admin/salary.php');
-        require_once(ROOT . '/application/views/admin/footer.php');
-    }
+
     public function actionGetDelivery()
     {
         $get_deliveries = new \Application\models\Delivery();
@@ -692,6 +636,7 @@ class AdminController
             echo 1;
         }
     }
+
     public function actionInsertNewProduct()
     {
         if (NULL!=($_POST['name'])) {
@@ -729,9 +674,9 @@ class AdminController
         }
 
     }
+
     public function actionUpSmImg()
     {
-
         if(isset($_GET['department_id_from_url'])) {
             /* Getting file name */
             $filename = $_FILES['file']['name'];
@@ -751,7 +696,6 @@ class AdminController
             } else {
                 /* Upload file */
                 if (move_uploaded_file($_FILES['file']['tmp_name'], $location)) {
-                    //                    echo $location;
                     echo $filename;
 
                 } else {
@@ -760,6 +704,7 @@ class AdminController
             }
         }
     }
+
     public function actionUploadImageNews()
     {
         /* Getting file name */
@@ -786,6 +731,7 @@ class AdminController
             }
         }
     }
+
     public function actionUploadImageDepartment()
     {
         /* Getting file name */
@@ -806,15 +752,14 @@ class AdminController
             /* Upload file */
             if (move_uploaded_file($_FILES['file']['tmp_name'], $location)) {
                 echo $filename;
-
             } else {
                 // echo 0;
             }
         }
     }
+
     public function actionUploadSmallImages()
     {
-
         /* Getting file name */
         $filename = $_FILES['file']['name'];
         /* Location */
@@ -838,22 +783,13 @@ class AdminController
             }
         }
     }
+
     public function actionUpload()
     {
         /* Getting file name */
         if (isset($_GET['department_id_from_url'])) {
             $filename = $_FILES['file']['name'];
             /* Location */
-//            $dirname = $_POST["search"];
-//            $filename = "/folder/" . $dirname . "/";
-//
-//            if (!file_exists($filename)) {
-//                mkdir("folder/" . $dirname, 0777);
-//                echo "The directory $dirname was successfully created.";
-//                exit;
-//            } else {
-//                echo "The directory $dirname exists.";
-//            }
             $location = "C:/OpenServer/domains/localhost/application/photo/".$_GET['department_id_from_url']."/" . $filename;
             $uploadOk = 1;
             $imageFileType = pathinfo($location, PATHINFO_EXTENSION);
@@ -887,6 +823,7 @@ class AdminController
             echo $stmt;
         }
     }
+
     public function actionInsertPhotoNewsAdmin()
     {
         if (NULL !=($_POST['photo'])) {
@@ -908,6 +845,7 @@ class AdminController
             echo 1;
         }
     }
+
     public function actionUpdateNewsAdminWithoutPhoto()
     {
         if (NULL !=($_POST['title']) && NULL != ($_POST['content'])&& NULL != ($_POST['new_id'])) {
@@ -931,6 +869,7 @@ class AdminController
             echo 1;
         }
     }
+
     public function actionUpdateNewsAdmin()
     {
         if (NULL !=($_POST['title']) && NULL !=($_POST['new_id'])&& NULL !=($_POST['content'])) {
@@ -953,6 +892,7 @@ class AdminController
             echo 1;
         }
     }
+
     public function actionUpdatePhotoDepartmentAdmin()
     {
         if (NULL !=($_POST['photo']) && NULL !=($_POST['department_id'])) {
@@ -963,6 +903,7 @@ class AdminController
             echo 1;
         }
     }
+
     public function actionCheckIfExistThisProduct()
     {
         if (NULL !=($_POST['product_name'])) {
@@ -985,6 +926,7 @@ class AdminController
             echo $stmt;
         }
     }
+
     public function actionUpdatePhoto()
     {
         if (NULL !=($_POST['photo'])) {
@@ -995,6 +937,7 @@ class AdminController
             echo 1;
         }
     }
+
     public function actionUpdateProduct()
     {
         if (isset($_POST['name']) ) {
@@ -1016,6 +959,7 @@ class AdminController
             echo 1;
         }
     }
+
     public function actionInsertSmallPhoto()
     {
         if (isset($_POST['photo'])) {
@@ -1043,6 +987,7 @@ class AdminController
             echo json_encode($data);
         }
     }
+
     public function actionGetDepartmentId()
     {
         if (NULL !=($_POST['department'])) {
@@ -1052,6 +997,7 @@ class AdminController
             echo 1;
         }
     }
+
     public function actionAddNewDelivery()
     {
         if (NULL !=($_POST['city_id'])) {
@@ -1067,6 +1013,7 @@ class AdminController
             echo 1;
         }
     }
+
     public function actionAddNewDepartment()
     {
         if (NULL !=($_POST['new_department'])){
@@ -1091,6 +1038,7 @@ class AdminController
             echo 'Отдел не добавлен';
         }
     }
+
     public function actionGetChildOfDepartment()
     {
         if (NULL !=($_POST['main_department_id'])) {
@@ -1108,6 +1056,7 @@ class AdminController
             echo json_encode($data);
         }
     }
+
     public function actionAddNewSupplier()
     {
         if (isset($_POST['new_supplier']) && isset($_POST['new_info_supplier'])&& isset($_POST['new_department'])) {
@@ -1127,6 +1076,7 @@ class AdminController
             }
         }
     }
+
     public function actionUpdateDelivery()
     {
         if(isset($_POST['supplier_id']) && isset($_POST['city_id']) && isset($_POST['address']) && isset($_POST['date'])&& isset($_POST['time'])&& isset($_POST['info'])&& isset($_POST['department'])) {
@@ -1136,8 +1086,6 @@ class AdminController
             $address = $_POST['address'];
             $date = $_POST['date'];
             $time = $_POST['time'];
-            $info = $_POST['info'];
-            $department = $_POST['department'];
             $delivery = new \Application\models\Delivery();
             $search_delivery = $delivery->get_deliveres_conditionals_supplier($supplier);
             $search_delivery->execute(array($supplier));
@@ -1176,6 +1124,7 @@ class AdminController
            }
         }
     }
+
     public function actionGetInfoAboutSupplier()
     {
         if(isset($_POST['supplier_id'])  )
@@ -1200,6 +1149,7 @@ class AdminController
             echo json_encode($data);
         }
     }
+
     public function actionGetInfoAboutDelivery()
     {
         if(isset($_POST['date']) && isset($_POST['time']) && isset($_POST['city_id']) )
@@ -1288,6 +1238,7 @@ class AdminController
         }
         echo json_encode($output);
     }
+
     public function actionGetAllDeliveriesForThisCity()
     {
         if(isset($_POST['city_id'])) {
@@ -1320,6 +1271,7 @@ class AdminController
         }
         echo json_encode($output);
     }
+
     public function actionByCityId()
     {
         if(isset($_POST['city_id']))
@@ -1349,6 +1301,7 @@ class AdminController
             echo 1;
         }
     }
+
     public function actionDeleteNewAdmin()
     {
         if(isset($_POST['iid']))
@@ -1370,6 +1323,7 @@ class AdminController
             echo 1;
         }
     }
+
     public function actionDeleteProductFromDiscount()
     {
         if(isset($_POST['iid']))
@@ -1396,6 +1350,7 @@ class AdminController
             echo 1;
         }
     }
+
     public function actionInsertPromotionValue()
     {
         if(isset($_POST['value_promotion']))
@@ -1408,6 +1363,7 @@ class AdminController
             echo 1;
         }
     }
+
     public function actionInsertSpecialOfferValue()
     {
         if(isset($_POST['value_special_offer']))
@@ -1420,6 +1376,7 @@ class AdminController
             echo 1;
         }
     }
+
     public function actionUpdateDiscountValue()
     {
         if(isset($_POST['value_discount']))
@@ -1441,6 +1398,7 @@ class AdminController
              }
         }
     }
+
     public function actionUpdateDiscountEndDateValue()
     {
         if(isset($_POST['end_date']))
@@ -1463,6 +1421,7 @@ class AdminController
             }
         }
     }
+
     public function actionUpdatePromotionEndDateValue()
     {
         if(isset($_POST['end_date']))
@@ -1497,6 +1456,7 @@ class AdminController
             echo 1;
         }
     }
+
     public function actionUpdateSpecialOfferEndDateValue()
     {
         if(isset($_POST['end_date']))
@@ -1530,6 +1490,7 @@ class AdminController
             echo 1;
         }
     }
+
     public function actionDeleteSmImgAdded()
     {
         if(isset($_POST['id']))
@@ -1551,6 +1512,7 @@ class AdminController
             echo 1;
         }
     }
+
     public function actionAddWorker()
     {
         if (NULL !=($_POST['post_id'])) {
@@ -1569,6 +1531,7 @@ class AdminController
             echo 1;
         }
     }
+
     public function actionInsertNewUser()
     {
         if(NULL!=($_POST['name']))
@@ -1584,8 +1547,8 @@ class AdminController
             $users->insert_register_user($name,$password,$lastname,$patronymic,$birth_day,$email,$ip_address);
             echo 1;
         }
-
     }
+
     public function actionUpdateWorker()
     {
         if(isset($_POST['iid']))
@@ -1638,6 +1601,7 @@ class AdminController
             echo json_encode($data);
         }
     }
+
     public function actionGetId()
     {
         if(isset($_POST['iid'])){
@@ -1665,6 +1629,7 @@ class AdminController
             echo json_encode($data);
         }
     }
+
     public function actionWorker()
     {
         session_start();
@@ -1672,6 +1637,7 @@ class AdminController
         require_once(ROOT . '/application/views/admin/worker.php');
         require_once(ROOT . '/application/views/admin/footer.php');
     }
+
     public function actionnewsAdmin()
     {
         session_start();
@@ -1702,7 +1668,6 @@ class AdminController
                 $sub_data["parent_id"] = $department["parent_id"];
             $data[] = $sub_data;
        }
-
         foreach($data as $key => &$value)
         {
             $output[$value["id"]] = &$value;
@@ -1723,6 +1688,7 @@ class AdminController
         }
         echo json_encode($data);
     }
+
     public function actionResponse()
     {
         $all_workers = new \Application\models\Workers();

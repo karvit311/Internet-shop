@@ -117,7 +117,6 @@ class MainController
             }else{
                 echo '2';
             }
-
         }
     }
 

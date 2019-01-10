@@ -82,7 +82,7 @@ return array(
 
     //////////////////////////////////////////////////
     'admin/adminka' => 'admin/adminka',
-    'admin/salary' => 'admin/salary',
+//    'admin/salary' => 'admin/salary',
     'admin/About' => 'admin/About',
     'admin/GetSmallImagesEditAdmin' => 'admin/GetSmallImagesEditAdmin',
     'admin/UpdateProduct' => 'admin/UpdateProduct',
@@ -121,7 +121,7 @@ return array(
     'admin/DeleteReview' => 'admin/DeleteReview',
     'admin/allDepartments' => 'admin/allDepartments',
     'admin/products/(.+)[0-9]' => 'admin/products/$1',
-    'admin/view/(.+)[0-9]' => 'admin/view/$1',
+//    'admin/view/(.+)[0-9]' => 'admin/view/$1',
     'admin/ByCityId' => 'admin/ByCityId',
     'admin/SpecialOffers' => 'admin/SpecialOffers',
     'admin/Discount' => 'admin/Discount',
@@ -158,7 +158,7 @@ return array(
     'admin/UpdatePhoto' => 'admin/UpdatePhoto',
     'admin/InsertSmallPhoto' => 'admin/InsertSmallPhoto',
     'admin/SignupData' => 'admin/SignupData',
-    'admin/Login' => 'admin/Login',
+//    'admin/Login' => 'admin/Login',
     'admin/CheckData' => 'admin/CheckData',
     'admin/CheckUnique' => 'admin/CheckUnique',
     'admin/InsertNewUser' => 'admin/InsertNewUser',

@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4e064a6-aa83-4c62-b330-4f87cb88d7fe" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/application/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/js/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/routes.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,11 +34,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/js/signup-index.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="41" column="39" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="39" />
+            <state relative-caret-position="272">
+              <caret line="435" lean-forward="true" selection-start-line="435" selection-end-line="435" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/routes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="281">
+              <caret line="65" column="21" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -45,8 +55,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/MainController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="101" column="29" lean-forward="true" selection-start-line="101" selection-start-column="29" selection-end-line="101" selection-end-column="29" />
+            <state relative-caret-position="1955">
+              <caret line="118" column="13" selection-start-line="118" selection-start-column="13" selection-end-line="118" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -108,7 +118,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/js/admin.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="407">
@@ -117,23 +127,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2227">
-              <caret line="131" column="61" selection-start-line="131" selection-start-column="61" selection-end-line="131" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>new_admin_div_info</find>
-      <find>new_admin_div_button</find>
-      <find>FormControlInputPhoto</find>
-      <find>select-links</find>
       <find>actionBe</find>
       <find>get_product_from_cart_by_ip_address</find>
       <find>addition_type_promotion</find>
@@ -160,6 +157,10 @@
       <find>check_user</find>
       <find>check_user_data</find>
       <find>CheckData</find>
+      <find>Login</find>
+      <find>Department</find>
+      <find>salary</find>
+      <find>GetDelivery</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -211,14 +212,14 @@
         <option value="$PROJECT_DIR$/application/views/admin/newsAdmin.php" />
         <option value="$PROJECT_DIR$/application/js/newsAdmin.js" />
         <option value="$PROJECT_DIR$/application/js/admin-products.js" />
-        <option value="$PROJECT_DIR$/application/routes.php" />
-        <option value="$PROJECT_DIR$/application/controllers/MainController.php" />
         <option value="$PROJECT_DIR$/application/js/head.js" />
         <option value="$PROJECT_DIR$/application/views/main/head.php" />
         <option value="$PROJECT_DIR$/application/views/admin/adminka.php" />
-        <option value="$PROJECT_DIR$/application/controllers/AdminController.php" />
         <option value="$PROJECT_DIR$/application/js/main.js" />
         <option value="$PROJECT_DIR$/application/js/admin.js" />
+        <option value="$PROJECT_DIR$/application/controllers/MainController.php" />
+        <option value="$PROJECT_DIR$/application/routes.php" />
+        <option value="$PROJECT_DIR$/application/controllers/AdminController.php" />
       </list>
     </option>
   </component>
@@ -419,24 +420,6 @@
               <item name="localhost" type="b2602c69:ProjectViewProjectNode" />
               <item name="localhost" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="localhost" type="b2602c69:ProjectViewProjectNode" />
-              <item name="localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="localhost" type="b2602c69:ProjectViewProjectNode" />
-              <item name="localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="localhost" type="b2602c69:ProjectViewProjectNode" />
-              <item name="localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -444,7 +427,7 @@
               <item name="localhost" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -660,12 +643,12 @@
       <workItem from="1546855130035" duration="698000" />
       <workItem from="1546933592616" duration="19621000" />
       <workItem from="1547016483337" duration="14753000" />
-      <workItem from="1547106344419" duration="865000" />
+      <workItem from="1547106344419" duration="2831000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2030877000" />
+    <option name="totallyTimeSpent" value="2032843000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -986,13 +969,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-970">
-          <caret line="112" column="24" selection-start-line="112" selection-start-column="24" selection-end-line="112" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/main/signup.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="884">
@@ -1031,24 +1007,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2227">
-          <caret line="131" column="61" selection-start-line="131" selection-start-column="61" selection-end-line="131" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/Users.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
           <caret line="38" column="35" selection-start-line="38" selection-start-column="20" selection-end-line="38" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/MainController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="101" column="29" lean-forward="true" selection-start-line="101" selection-start-column="29" selection-end-line="101" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -1070,6 +1032,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="407">
           <caret line="652" column="28" selection-start-line="652" selection-start-column="28" selection-end-line="652" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/MainController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1955">
+          <caret line="118" column="13" selection-start-line="118" selection-start-column="13" selection-end-line="118" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="65" column="21" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="435" lean-forward="true" selection-start-line="435" selection-end-line="435" />
         </state>
       </provider>
     </entry>
