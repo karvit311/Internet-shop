@@ -135,6 +135,7 @@ $("button#login").click(function() {
         url: "/main/CheckData",
         data: "email=" +email + "&password="+password,
         success: function (response) {
+            alert(response);
             if($.trim(response) == 1) {
                 window.location.replace("/main/index");
             }else{

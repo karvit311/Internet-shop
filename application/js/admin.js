@@ -650,6 +650,7 @@ $("button#login_in_adminka").click(function() {
         url: "/admin/CheckData",
         data: "login=" +login + "&password="+password,
         success: function (response) {
+            alert(response);
             if($.trim(response) == 1) {
                 // location.reload();
                 window.location.replace("/admin/index");
