@@ -9,6 +9,7 @@ error_reporting(E_ALL);?>
         <title>Products</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/application/css/view-index.css">
+
     </head>
     <body>
         <?php
@@ -231,4 +232,5 @@ error_reporting(E_ALL);?>
         </div>
     </body>
 </html>
-<script src="/application/js/view-index.js"></script>
+<script src="/application/js/main.js"></script>
+

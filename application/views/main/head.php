@@ -73,6 +73,7 @@
 <!--    <script src="/application/js/star-rating-svg-master/Gruntfile.js"></script>-->
 <!--    <script src="/application/js/star-rating-svg-master/dist/jquery.star-rating-svg.js"></script>-->
     <script src="/application/js/star-rating-svg-master/src/jquery.star-rating-svg.js"></script>
+
 <!--    <script src="/application/js/rater/js/jquery.rating-2.0.min.js"></script>-->
 <!--    <script src="/application/js/rater/js/jquery-1.6.2.min.js"></script>-->
 
@@ -136,3 +137,4 @@
     </body>
 </html>
 <script src="/application/js/head.js"></script>
+

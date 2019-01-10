@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a4e064a6-aa83-4c62-b330-4f87cb88d7fe" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/css/css.css" beforeDir="false" afterPath="$PROJECT_DIR$/application/css/css.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/css/view-index.css" beforeDir="false" afterPath="$PROJECT_DIR$/application/css/view-index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/js/view-index.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/js/view-index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/main/index2.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/js/view-index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/main/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/main/head.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application/views/main/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/main/view.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,33 +35,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/js/view-index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2238">
-              <caret line="178" column="3" selection-start-line="178" selection-start-column="3" selection-end-line="178" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/views/main/view.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="162" column="68" selection-start-line="162" selection-start-column="68" selection-end-line="162" selection-end-column="68" />
-              <folding>
-                <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#li#3;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/main/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+            <state relative-caret-position="289">
+              <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/main/view.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="742">
+              <caret line="234" column="33" selection-start-line="234" selection-start-column="33" selection-end-line="234" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -74,8 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
+            <state relative-caret-position="841">
+              <caret line="339" column="13" selection-start-line="339" selection-start-column="13" selection-end-line="339" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -101,10 +83,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/main/head.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1442">
-              <caret line="95" column="88" selection-start-line="95" selection-start-column="88" selection-end-line="95" selection-end-column="88" />
+            <state relative-caret-position="813">
+              <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
               <folding>
-                <marker date="1547044484999" expanded="true" signature="5731:5801" ph="..." />
+                <marker date="1547117851601" expanded="true" signature="5732:5802" ph="..." />
               </folding>
             </state>
           </provider>
@@ -219,16 +201,16 @@
         <option value="$PROJECT_DIR$/application/js/newsAdmin.js" />
         <option value="$PROJECT_DIR$/application/js/admin-products.js" />
         <option value="$PROJECT_DIR$/application/js/head.js" />
-        <option value="$PROJECT_DIR$/application/views/main/head.php" />
         <option value="$PROJECT_DIR$/application/views/admin/adminka.php" />
-        <option value="$PROJECT_DIR$/application/js/main.js" />
         <option value="$PROJECT_DIR$/application/js/admin.js" />
         <option value="$PROJECT_DIR$/application/controllers/AdminController.php" />
         <option value="$PROJECT_DIR$/application/controllers/MainController.php" />
         <option value="$PROJECT_DIR$/application/routes.php" />
-        <option value="$PROJECT_DIR$/application/js/view-index.js" />
         <option value="$PROJECT_DIR$/application/css/view-index.css" />
         <option value="$PROJECT_DIR$/application/css/css.css" />
+        <option value="$PROJECT_DIR$/application/js/view-index.js" />
+        <option value="$PROJECT_DIR$/application/views/main/head.php" />
+        <option value="$PROJECT_DIR$/application/js/main.js" />
         <option value="$PROJECT_DIR$/application/views/main/view.php" />
       </list>
     </option>
@@ -665,12 +647,12 @@
       <workItem from="1546855130035" duration="698000" />
       <workItem from="1546933592616" duration="19621000" />
       <workItem from="1547016483337" duration="14753000" />
-      <workItem from="1547106344419" duration="8264000" />
+      <workItem from="1547106344419" duration="8802000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2038276000" />
+    <option name="totallyTimeSpent" value="2038814000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1015,27 +997,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/main/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="38" lean-forward="true" selection-start-line="19" selection-start-column="38" selection-end-line="19" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/js/view-index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2238">
-          <caret line="178" column="3" selection-start-line="178" selection-start-column="3" selection-end-line="178" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/main/products.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
@@ -1059,22 +1020,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/main/head.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1442">
-          <caret line="95" column="88" selection-start-line="95" selection-start-column="88" selection-end-line="95" selection-end-column="88" />
+        <state relative-caret-position="813">
+          <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
           <folding>
-            <marker date="1547044484999" expanded="true" signature="5731:5801" ph="..." />
+            <marker date="1547117851601" expanded="true" signature="5732:5802" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="841">
+          <caret line="339" column="13" selection-start-line="339" selection-start-column="13" selection-end-line="339" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/main/view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="162" column="68" selection-start-line="162" selection-start-column="68" selection-end-line="162" selection-end-column="68" />
-          <folding>
-            <element signature="n#style#0;n#li#3;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#li#3;n#ul#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="742">
+          <caret line="234" column="33" selection-start-line="234" selection-start-column="33" selection-end-line="234" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/js/view-index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="50" lean-forward="true" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/main/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
         </state>
       </provider>
     </entry>
