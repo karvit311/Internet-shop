@@ -19,9 +19,9 @@ class Product
         $conn = App::$app->get_db();
         $stmt = $conn->prepare("SELECT * FROM products WHERE name=?");
         $stmt->bindValue(1, $product_name);
-//        $stmt->bindValue(2, $department_id);
         return $stmt;
     }
+
     public function get_total_products_by_department_id($department_id)
     {
         $conn = App::$app->get_db();
@@ -29,6 +29,7 @@ class Product
         $stmt->bindValue(1, $department_id);
         return $stmt;
     }
+
     public function get_products_by_department_id($department_id,$limit,$start)
     {
         $conn = App::$app->get_db();
@@ -43,17 +44,15 @@ class Product
     {
         $conn = App::$app->get_db();
         $stmt = $conn->prepare("SELECT pm.promotion_discount,pm.promotion_offer,pm.promotion_minus,pm.promotion_discount_value,
-       pr.special_offer,pr.discount,pr.photo,pr.new_product,pr.popular,pr.id as ProductId,pr.name,pr.price,pr.department_id,
-       pr.promotion,pm.id as PromotionId,pm.value_promotion,pm.end_date,pm.left_block,pm.title,pm.type FROM products pr LEFT JOIN 
+        pr.special_offer,pr.discount,pr.photo,pr.new_product,pr.popular,pr.id as ProductId,pr.name,pr.price,pr.department_id,
+        pr.promotion,pm.id as PromotionId,pm.value_promotion,pm.end_date,pm.left_block,pm.title,pm.type FROM products pr LEFT JOIN 
          promotion pm ON pr.promotion=pm.id WHERE pr.promotion=:promotion_id  LIMIT :limit OFFSET :start ");
-//        $stmt->bindValue(1, $promotion_id);
-//        $stmt->bindValue(2, $limit);
-//        $stmt->bindValue(3, $start);
         $stmt->bindParam(":promotion_id", $promotion_id, \PDO::PARAM_INT);
         $stmt->bindParam(":limit", $limit, \PDO::PARAM_INT);
         $stmt->bindParam(":start", $start, \PDO::PARAM_INT);
         return $stmt;
     }
+
     public function get_total_by_product_promotion($promotion_id)
     {
         $conn = App::$app->get_db();
@@ -61,6 +60,7 @@ class Product
         $stmt->bindValue(1, $promotion_id);
         return $stmt;
     }
+
     public function update_checkboxes_promotions($selected,$promotion_id)
     {
         $conn = App::$app->get_db();
@@ -70,6 +70,7 @@ class Product
         $update = $stmt->execute();
         return $update;
     }
+
     public function remove_discount($id)
     {
         $conn = App::$app->get_db();
@@ -78,6 +79,7 @@ class Product
         $update = $stmt->execute();
         return $update;
     }
+
     public function get_products_by_news($limit,$start)
     {
         $conn = App::$app->get_db();
@@ -86,6 +88,7 @@ class Product
         $stmt->bindParam(":start", $start, \PDO::PARAM_INT);
         return $stmt;
     }
+
     public function get_products_by_popular($limit,$start)
     {
         $conn = App::$app->get_db();
@@ -94,24 +97,28 @@ class Product
         $stmt->bindParam(":start", $start, \PDO::PARAM_INT);
         return $stmt;
     }
+
     public function get_total_by_new_product()
     {
         $conn = App::$app->get_db();
         return $conn->query("SELECT COUNT(id)as total FROM products WHERE new_product=1")->fetchAll();
         return $stmt;
     }
+
     public function get_total_by_popular()
     {
         $conn = App::$app->get_db();
         return $conn->query("SELECT COUNT(id)as total FROM products WHERE popular=1")->fetchAll();
         return $stmt;
     }
+
     public function get_total_by_soon_be_over()
     {
         $conn = App::$app->get_db();
         return $conn->query("SELECT COUNT(id)as total FROM products WHERE quantity<10")->fetchAll();
         return $stmt;
     }
+
     public function get_products_soon_be_over($limit,$start)
     {
         $conn = App::$app->get_db();
@@ -130,12 +137,6 @@ class Product
         return $stmt;
     }
 
-//    public function get_discount_by_special_offer_and_discount()
-//    {
-//        $conn = App::$app->get_db();
-//        return $conn->prepare("SELECT s.product_id,p.id,p.department_id,p.special_offer FROM products p LEFT JOIN special_offer s ON s.product_id=p.id WHERE p.special_offer=1")->fetchAll();
-//
-//    }
     public function get_discount_by_special_offer_and_discount()
     {
         $conn = App::$app->get_db();
@@ -150,6 +151,7 @@ class Product
         $stmt->bindValue(1, $iid);
         return $stmt;
     }
+
     public function get_discount_by_department_id_and_discount($department_id)
     {
         $conn = App::$app->get_db();
@@ -172,6 +174,7 @@ class Product
         $stmt->bindValue(1, $department_id);
         return $stmt;
     }
+
     public function get_allprices_by_department_id($department_id)
     {
         $conn = App::$app->get_db();
@@ -179,6 +182,7 @@ class Product
         $stmt->bindValue(1, $department_id);
         return $stmt;
     }
+
     public function get_prices_by_department_id($department_id)
     {
         $conn = App::$app->get_db();
@@ -196,12 +200,7 @@ class Product
         $update = $stmt->execute();
         return $update;
     }
-//    public function get_promotion_products()
-//    {
-//        $conn = App::$app->get_db();
-//        return $conn->query("SELECT pd.id,pm.product_id,pd.discount,pd.price,pm.end_date,pm.value_promotion,pd.name,pd.photo FROM products pd LEFT JOIN promotion pm ON pm.product_id=pd.id WHERE pd.discount=1")->fetchAll();
-//        return $stmt;
-//    }
+
     public function get_prices_by_discount($limit,$start)
     {
         $conn = App::$app->get_db();
@@ -210,6 +209,7 @@ class Product
         $stmt->bindParam(":start", $start, \PDO::PARAM_INT);
         return $stmt;
     }
+
     public function get_total_by_discount()
     {
         $conn = App::$app->get_db();
@@ -223,6 +223,7 @@ class Product
         return $conn->query("SELECT COUNT(id)as total FROM products WHERE special_offer=1")->fetchAll();
         return $stmt;
     }
+
     public function get_prices_by_special_offers($limit,$start)
     {
         $conn = App::$app->get_db();
@@ -249,6 +250,7 @@ class Product
         $update = $stmt->execute();
         return $update;
     }
+
     public function update_product($iid,$name,$price,$colour,$brand,$quantity,$description,$adding_info,$discount,$new_product,$promotion,$special_offer,$popular)
     {
         $conn = App::$app->get_db();
@@ -267,24 +269,15 @@ class Product
         $stmt->bindParam(":promotion", $promotion, \PDO::PARAM_INT);
         $stmt->bindParam(":special_offer", $special_offer, \PDO::PARAM_INT);
         $stmt->bindParam(":popular", $popular, \PDO::PARAM_INT);
-//        $stmt->bindParam(":department_id", $department_id, \PDO::PARAM_STR);
         $update = $stmt->execute();
         return $update;
     }
 
-//    public function insert_main_photo($photo)
-//    {
-//        $conn = App::$app->get_db();
-//        $stmt = $conn->prepare( "INSERT INTO products (photo)  VALUES(:photo)");
-//        $stmt->bindParam(":photo", $photo, \PDO::PARAM_STR);
-//        $stmt->execute();
-//    }$name,$department_id,$price,$discount,$popular,$new_product,$special_offer,$promotion,$photo,$quantity,$big_description,$adding_info,$brand,$colour);
     public function insert_new_product($name,$department_id,$price,$discount,$popular,$new_product,$special_offer,$promotion,$photo,$quantity,$big_description,$adding_info,$brand,$colour)
     {
         $conn = App::$app->get_db();
         $stmt = $conn->prepare("INSERT INTO products (name,department_id, price,discount,popular,new_product,special_offer,promotion,photo,quantity,big_description,adding_info,brand,colour) 
             VALUES(:name,:department_id, :price,:discount,:popular,:new_product,:special_offer,:promotion,:photo,:quantity,:big_description,:adding_info,:brand,:colour)");
-//        $stmt->bindParam(":id", $iid, \PDO::PARAM_INT);
         $stmt->bindParam(":name", $name, \PDO::PARAM_STR);
         $stmt->bindParam(":department_id", $department_id, \PDO::PARAM_INT);
         $stmt->bindParam(":price", $price, \PDO::PARAM_INT);
@@ -301,6 +294,7 @@ class Product
         $stmt->bindParam(":colour", $colour, \PDO::PARAM_STR);
         $stmt->execute();
     }
+
     public function delete_product($id)
     {
         $conn = App::$app->get_db();
@@ -308,6 +302,7 @@ class Product
         $stmt->bindParam(":id", $id, \PDO::PARAM_INT);
         $stmt->execute();
     }
+
     public function insert_main_photo($photo)
     {
         $conn = App::$app->get_db();
@@ -315,34 +310,12 @@ class Product
         $stmt->bindParam(":photo", $photo, \PDO::PARAM_STR);
         $stmt->execute();
     }
+
     public function count_all_products()
     {
         $conn = App::$app->get_db();
         $stmt = $conn->query("SELECT  COUNT(id)as total FROM products ")->fetchAll();
         return $stmt;
     }
-//    public function get_deliveres_date_city_id($city_id, $date)
-//    {
-//        $conn = App::$app->get_db();
-//        $stmt = $conn->prepare("SELECT * FROM schedule_of_delivery WHERE city_id=? AND date=?");
-//        $stmt->bindValue(1, $city_id);
-//        $stmt->bindValue(2, $date);
-//        return $stmt;
-//    }
-//    public function get_deliveres_date_city_id_time($time, $date)
-//    {
-//        $conn = App::$app->get_db();
-//        $stmt = $conn->prepare("SELECT * FROM schedule_of_delivery WHERE time=? AND date=?");
-//        $stmt->bindValue(1, $time);
-//        $stmt->bindValue(2, $date);
-//        return $stmt;
-//    }
-//    public function get_supplier_conditionals_supplier_id($supplier_id)
-//    {
-//        $conn = App::$app->get_db();
-//        $stmt = $conn->prepare("SELECT * FROM supplier WHERE id=? ");
-//        $stmt->bindValue(1, $supplier_id);
-//        return $stmt;
-//    }
 }
 ?>  

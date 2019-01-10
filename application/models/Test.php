@@ -10,21 +10,24 @@ class Test
     {  
         $conn = App::$app->get_db();
         return $conn->query("SELECT * FROM treeview_items")->fetchAll();
-    } 
+    }
+
     public function get_prepare($new_region)
     {
         $conn = App::$app->get_db(); 
         $stmt = $conn->prepare("SELECT id, name FROM region WHERE name = ?");
         $stmt->bindParam(1, $new_region);
         return $stmt;
-    }  
+    }
+
     public function get_prepare_by_id($region_id)
     {
         $conn = App::$app->get_db(); 
         $stmt = $conn->prepare("SELECT id, name FROM region WHERE id = ?");
         $stmt->bindParam(1, $region_id);
         return $stmt;
-    }        
+    }
+
     public function insert($new_region)
     {
         $conn = App::$app->get_db(); 

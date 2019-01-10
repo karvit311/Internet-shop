@@ -11,34 +11,11 @@ class Salary
         $conn = App::$app->get_db();
         return $conn->query("SELECT * FROM salary")->fetchAll();
     }
-//    public function get_posts()
-//    {
-//        $conn = App::$app->get_db();
-//        return $conn->query("SELECT * FROM posts")->fetchAll();
-//    }
-//    public function get_post($post_id)
-//    {
-//        $conn = App::$app->get_db();
-//        $stmt =$conn->prepare("SELECT  posts.post, posts.post_id FROM posts
-//            LEFT JOIN workers ON posts.id=workers.post_id
-//            WHERE workers.post_id = ?
-//           ");
-//        $stmt->bindParam(1, $post_id);
-//        return $stmt;
-//    }
 
-//    public function get_workers_by_id($workers_id)
-//    {
-//        $conn = App::$app->get_db();
-//        $stmt =$conn->prepare("SELECT * FROM workers WHERE id = ?");
-//        $stmt->bindParam(1, $workers_id);
-//        return $stmt;
-//    }
     public function insert_worker($lastname,$name,$patronymic,$birth_day,$salary,$email,$post_id)
     {
         $conn = App::$app->get_db();
         $stmt = $conn->prepare( "INSERT INTO workers (lastname,name,patronymic,birth_day,salary,email,post_id)  VALUES(:lastname,:name,:patronymic,:birth_day,:salary,:email,:post_id)");
-//        $birth_day = date("Y-m-d H:i:s", strtotime($birth_day));
         $stmt->bindParam(":lastname", $lastname, \PDO::PARAM_STR);
         $stmt->bindParam(":name", $name, \PDO::PARAM_STR);
         $stmt->bindParam(":patronymic", $patronymic, \PDO::PARAM_STR);
@@ -65,6 +42,7 @@ class Salary
         $update = $stmt->execute();
         return $update;
     }
+
     public function delete_worker($id)
     {
         $conn = App::$app->get_db();
@@ -72,6 +50,5 @@ class Salary
         $stmt->bindParam(":id", $id, \PDO::PARAM_INT);
         $stmt->execute();
     }
-
 }  
 ?>  

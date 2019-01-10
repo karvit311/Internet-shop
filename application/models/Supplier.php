@@ -13,39 +13,6 @@ class Supplier
         $conn = App::$app->get_db();
         return $conn->query("SELECT * FROM supplier ")->fetchAll();
     }
-//
-//    public function get_deliveres_conditionals($date)
-//    {
-//        $conn = App::$app->get_db();
-//        $stmt = $conn->prepare("SELECT * FROM schedule_of_delivery WHERE date=? ");
-//        $stmt->bindValue(1, $date);
-//        return $stmt;
-//    }
-//
-//    public function get_deliveres_conditionals_city_id($city_id)
-//    {
-//        $conn = App::$app->get_db();
-//        $stmt = $conn->prepare("SELECT * FROM schedule_of_delivery WHERE city_id=? ");
-//        $stmt->bindValue(1, $city_id);
-//        return $stmt;
-//    }
-//
-//    public function get_deliveres_date_city_id($city_id, $date)
-//    {
-//        $conn = App::$app->get_db();
-//        $stmt = $conn->prepare("SELECT * FROM schedule_of_delivery WHERE city_id=? AND date=?");
-//        $stmt->bindValue(1, $city_id);
-//        $stmt->bindValue(2, $date);
-//        return $stmt;
-//    }
-//    public function get_deliveres_date_city_id_time($time, $date)
-//    {
-//        $conn = App::$app->get_db();
-//        $stmt = $conn->prepare("SELECT * FROM schedule_of_delivery WHERE time=? AND date=?");
-//        $stmt->bindValue(1, $time);
-//        $stmt->bindValue(2, $date);
-//        return $stmt;
-//    }
 
     public function get_exist_new_supplier($supplier)
     {
@@ -54,6 +21,7 @@ class Supplier
         $stmt->bindValue(1, $supplier);
         return $stmt;
     }
+
     public function insert_supplier($new_supplier,$new_info_supplier,$department)
     {
         $conn = App::$app->get_db();
@@ -63,6 +31,7 @@ class Supplier
         $stmt->bindParam(":department", $department, \PDO::PARAM_INT);
         $stmt->execute();
     }
+
     public function get_supplier_conditionals_supplier_id($supplier_id)
     {
         $conn = App::$app->get_db();
