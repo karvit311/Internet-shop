@@ -7,14 +7,11 @@ use Application\models\Uploader;
 
 class MainController 
 {
-//    private $uploader;
-//    public function __construct() {
-//        $this->uploader = new Uploader();
-//    }
     public function actionTest()
     {
         require_once(ROOT . '/application/views/main/test.php');
     }
+
 	public function actionIndex()
 	{
         session_start();
@@ -22,19 +19,14 @@ class MainController
     	require_once(ROOT . '/application/views/main/index.php');
         require_once(ROOT . '/application/views/main/footer.php');
 	}
+
     public function actionNewsOfCompany()
     {
         require_once(ROOT . '/application/views/main/head.php');
         require_once(ROOT . '/application/views/main/news_of_company.php');
         require_once(ROOT . '/application/views/main/footer.php');
     }
-//    public function actionDelivery()
-//    {
-//        session_start();
-//        require_once(ROOT . '/application/views/main/head.php');
-//        require_once(ROOT . '/application/views/main/delivery.php');
-//        require_once(ROOT . '/application/views/main/footer.php');
-//    }
+
     public function actionNews()
     {
         session_start();
@@ -42,6 +34,7 @@ class MainController
         require_once(ROOT . '/application/views/main/news.php');
         require_once(ROOT . '/application/views/main/footer.php');
     }
+
     public function actionPopular()
     {
         session_start();
@@ -49,6 +42,7 @@ class MainController
         require_once(ROOT . '/application/views/main/popular.php');
         require_once(ROOT . '/application/views/main/footer.php');
     }
+
     public function actionBeOver()
     {
         session_start();
@@ -56,6 +50,7 @@ class MainController
         require_once(ROOT . '/application/views/main/be_over.php');
         require_once(ROOT . '/application/views/main/footer.php');
     }
+
     public function actionSignup()
     {
        // session_start();
@@ -63,6 +58,7 @@ class MainController
         require_once(ROOT . '/application/views/main/signup.php');
         require_once(ROOT . '/application/views/main/footer.php');
     }
+
     public function actionLogout()
     {
         session_start();
@@ -71,14 +67,7 @@ class MainController
         session_destroy();
         header('Location: /main/index');
     }
-//
-//    public function actionSignupData()
-//    {
-//        if(isset($_POST['name'])){
-//            $name = $_POST['name'];
-//            echo $name;
-//        }
-//    }
+
     public function actionCheckUnique()
     {
         if (NULL !=($_POST['email'])) {
@@ -94,6 +83,7 @@ class MainController
             }
         }
     }
+
     public function actionCheckData()
     {
         if (isset($_POST['email']) && isset($_POST['password'])) {
@@ -148,9 +138,6 @@ class MainController
     public function actionLogin()
     {
         session_start();
-//        session_unset();
-//        $_SESSION = array();
-//        session_destroy();
         require_once(ROOT . '/application/views/main/head.php');
         require_once(ROOT . '/application/views/main/login.php');
         require_once(ROOT . '/application/views/main/footer.php');
@@ -240,19 +227,6 @@ class MainController
         require_once(ROOT . '/application/views/main/footer.php');
     }
 
-//    public function actionDepartment()
-//    {
-//        require_once(ROOT . '/application/views/main/head.php');
-//        require_once(ROOT . '/application/views/main/department.php');
-//        require_once(ROOT . '/application/views/main/footer.php');
-//    }
-//
-//    public function actionSalary()
-//    {
-//        require_once(ROOT . '/application/views/main/head.php');
-//        require_once(ROOT . '/application/views/main/salary.php');
-//        require_once(ROOT . '/application/views/main/footer.php');
-//    }
     public function actionCart()
     {
         session_start();
@@ -260,22 +234,6 @@ class MainController
         require_once(ROOT . '/application/views/main/cart.php');
         require_once(ROOT . '/application/views/main/footer.php');
     }
-
-//    public function actionGetDelivery()
-//    {
-//        $get_deliveries = new \Application\models\Delivery();
-//        $deliveries  = $get_deliveries->get_deliveres();
-//        foreach ($deliveries as $delivery) {
-//            $sub_data['address'] = $delivery['address'];
-//            $date = $delivery['date'];
-//            $change_format_date = date_create($date);
-//            $change_format_date = date_format($change_format_date, 'm/d/Y');
-//            $sub_data['date'] = $change_format_date;
-//            $sub_data['time'] = $delivery['time'];
-//            $data[] = $sub_data;
-//        }
-//        echo json_encode($data);
-//    }
 
     public function actionInsertOrder() /////////////////
     {
@@ -399,85 +357,6 @@ class MainController
         }
     }
 
-//    public function actionUpSmImg()
-//    {
-//        /* Getting file name */
-//        $filename = $_FILES['file']['name'];
-//        /* Location */
-//        $location = "C:/OpenServer/domains/localhost/application/photo/phone/small_images/".$filename;
-//        $uploadOk = 1;
-//        $imageFileType = pathinfo($location,PATHINFO_EXTENSION);
-//        /* Valid Extensions */
-//        $valid_extensions = array("jpg","jpeg","png");
-//        /* Check file extension */
-//        if( !in_array(strtolower($imageFileType),$valid_extensions) ) {
-//            $uploadOk = 0;
-//        }
-//        if($uploadOk == 0){
-//            echo 0;
-//        }else{
-//            /* Upload file */
-//            if(move_uploaded_file($_FILES['file']['tmp_name'],$location)){
-//                echo $filename;
-//            }else{
-//                 echo 0;
-//            }
-//        }
-//    }
-
-//    public function actionUploadSmallImages()
-//    {
-//        /* Getting file name */
-//        $filename = $_FILES['file']['name'];
-//        /* Location */
-//        $location = "C:/OpenServer/domains/localhost/application/photo/phone/small_images/".$filename;
-//        $uploadOk = 1;
-//        $imageFileType = pathinfo($location,PATHINFO_EXTENSION);
-//        /* Valid Extensions */
-//        $valid_extensions = array("jpg","jpeg","png");
-//        /* Check file extension */
-//        if( !in_array(strtolower($imageFileType),$valid_extensions) ) {
-//            $uploadOk = 0;
-//        }
-//        if($uploadOk == 0){
-//            echo 0;
-//        }else{
-//            /* Upload file */
-//            if(move_uploaded_file($_FILES['file']['tmp_name'],$location)){
-//                echo $filename;
-//            }else{
-//               // echo 0;
-//            }
-//        }
-//    }
-
-//    public function actionUpload()
-//    {
-//        /* Getting file name */
-//        $filename = $_FILES['file']['name'];
-//        /* Location */
-//        $location = "C:/OpenServer/domains/localhost/application/photo/phone/".$filename;
-//        $uploadOk = 1;
-//        $imageFileType = pathinfo($location,PATHINFO_EXTENSION);
-//        /* Valid Extensions */
-//        $valid_extensions = array("jpg","jpeg","png");
-//        /* Check file extension */
-//        if( !in_array(strtolower($imageFileType),$valid_extensions) ) {
-//            $uploadOk = 0;
-//            echo 0;
-//        }
-//        if($uploadOk == 0){
-//            echo 0;
-//        }else{
-//            /* Upload file */
-//            if(move_uploaded_file($_FILES['file']['tmp_name'],$location)){
-//                echo $filename;
-//            }else{
-//                echo 0;
-//            }
-//        }
-//    }
-
     public function actionInsertMainPhotoAdd()
     {
         if (NULL !=($_POST['photo'])) {
@@ -571,22 +450,6 @@ class MainController
             echo 1;
         }
     }
-//
-//    public function actionAddNewDelivery()
-//    {
-//        if (NULL !=($_POST['city_id'])) {
-//            $address = $_POST['address'];
-//            $date = strip_tags($_POST['date']);
-//            $date = date_create($date);
-//            $date = date_format($date, 'Y-m-d H:s:i');
-//            $time = $_POST['time'];
-//            $city_id = $_POST['city_id'];
-//            $supplier_id = $_POST['supplier_id'];
-//            $new_delivery = new \Application\models\Delivery();
-//            $new_delivery->insert_delivery($address,$date,$time,$city_id,$supplier_id);
-//            echo 1;
-//        }
-//    }
 
     public function actionAddNewDepartment()
     {
@@ -650,31 +513,6 @@ class MainController
             }
         }
     }
-//
-//    public function actionUpdateDelivery()
-//    {
-//        if(isset($_POST['supplier_id']) && isset($_POST['city_id']) && isset($_POST['address']) && isset($_POST['date'])&& isset($_POST['time'])&& isset($_POST['info'])&& isset($_POST['department'])) {
-//            $supplier_id = $_POST['supplier_id'];
-//            $supplier = $_POST['supplier'];
-//            $city_id = $_POST['city_id'];
-//            $address = $_POST['address'];
-//            $date = $_POST['date'];
-//            $time = $_POST['time'];
-//            $info = $_POST['info'];
-//            $department = $_POST['department'];
-//            $delivery = new \Application\models\Delivery();
-//            $search_delivery = $delivery->get_deliveres_conditionals_supplier($supplier);
-//            $search_delivery->execute(array($supplier));
-//            $count = $search_delivery->rowCount();
-//            if ($count > 0) {
-//                echo 'count';
-//            } else {
-//            $deliveries = new \Application\models\Delivery();
-//            $update_delivery = $deliveries->update_worker($supplier_id, $city_id, $address, $date, $time);
-//            echo 1;
-//            }
-//        }
-//    }
 
     public function actionGetFilterProductBrand()
     {
@@ -700,6 +538,7 @@ class MainController
            }
         }
     }
+
     public function actionGetInfoAboutSupplier()
     {
         if(isset($_POST['supplier_id'])  )
@@ -724,122 +563,6 @@ class MainController
             echo json_encode($data);
         }
     }
-//    public function actionGetInfoAboutDelivery()
-//    {
-//        if(isset($_POST['date']) && isset($_POST['time']) )
-//        {
-//            $date = $_POST['date'];
-//            $time = $_POST['time'];
-//            $change_format_date = date_create($date);
-//            $change_format_date = date_format($change_format_date, 'Y-m-d');
-//            $get_deliveries = new \Application\models\Delivery();
-//            $deliveries  = $get_deliveries->get_deliveres_date_city_id_time($time,$change_format_date);
-//            $deliveries->execute(array($time,$change_format_date));
-//            foreach ($deliveries as $delivery) {
-//                $get_suppliers= new \Application\models\Supplier();
-//                $suppliers = $get_suppliers->get_supplier_conditionals_supplier_id($delivery['supplier_id']);
-//                $suppliers->execute(array($delivery['supplier_id']));
-//                foreach ($suppliers as $supplier) {
-//                    $sub_data['address'] = $delivery['address'];
-//                    $sub_data['date'] = $delivery['date'];
-//                    $sub_data['time'] = $delivery['time'];
-//                    $sub_data['supplier_id'] = $delivery['supplier_id'];
-//                    $sub_data['supplier'] = $supplier['supplier'];
-//                    $sub_data['info'] = $supplier['info'];
-//                    $get_departments= new \Application\models\Department();
-//                    $departments = $get_departments->get_department_conditionals_id($supplier['department']);
-//                    $departments->execute(array($supplier['department']));
-//                    foreach ($departments as $department) {
-//                        $sub_data['department'] = $department['department'];
-//                    }
-//                    $data[] = $sub_data;
-//                }
-//            }
-//            echo json_encode($data);
-//        }
-//    }
-//    public function actionGetDeliveryByDate()
-//    {
-//        if(isset($_POST['date']))
-//        {
-//            $date = $_POST['date'];
-//            $change_format_date = date_create($date);
-//            $change_format_date = date_format($change_format_date, 'Y-m-d');
-//            $get_deliveries = new \Application\models\Delivery();
-//            $deliveries  = $get_deliveries->get_deliveres_conditionals($change_format_date);
-//            $deliveries->execute(array($change_format_date));
-//            foreach ($deliveries as $delivery) {
-//                $sub_data['address'] = $delivery['address'];
-//                $sub_data['date'] = $delivery['date'];
-//                $sub_data['time'] = $delivery['time'];
-//                $data[] = $sub_data;
-//            }
-//        echo json_encode($data);
-//        }
-//    }
-
-//    public function actionGetAllDeliveriesForThisSupplier(){
-//        if(isset($_POST['supplier_id'])) {
-//            $supplier_id = $_POST['supplier_id'];
-//            $get_deliveries = new \Application\models\Delivery();
-//            $deliveries = $get_deliveries->get_deliveres_conditionals_supplier_id($supplier_id);
-//            $deliveries->execute(array($supplier_id));
-//            foreach ($deliveries as $delivery) {
-//                $get_suppliers= new \Application\models\Supplier();
-//                $suppliers = $get_suppliers->get_supplier_conditionals_supplier_id($delivery['supplier_id']);
-//                $suppliers->execute(array($delivery['supplier_id']));
-//                foreach ($suppliers as $supplier) {
-//                    $sub_data['supplier_id'] = $delivery['supplier_id'];
-//                    $sub_data['supplier'] = $supplier['supplier'];
-//                    $sub_data['info'] = $supplier['info'];
-//                    $sub_data['address'] = $delivery['address'];
-//                    $sub_data['city_id'] = $delivery['city_id'];
-//                    $sub_data['date'] = $delivery['date'];
-//                    $sub_data['time'] = $delivery['time'];
-//                    $get_departments= new \Application\models\Department();
-//                    $departments = $get_departments->get_department_conditionals_id($supplier['department']);
-//                    $departments->execute(array($supplier['department']));
-//                    foreach ($departments as $department) {
-//                        $sub_data['department'] = $department['department'];
-//                    }
-//                    $ou[] = $sub_data;
-//                }
-//            }
-//            $output[] = $ou;
-//        }
-//        echo json_encode($output);
-//    }
-//    public function actionGetAllDeliveriesForThisCity(){
-//        if(isset($_POST['city_id'])) {
-//            $city_id = $_POST['city_id'];
-//                $get_deliveries = new \Application\models\Delivery();
-//                $deliveries = $get_deliveries->get_array_deliveres_conditionals_city_id($city_id);
-//                $deliveries->execute(array($city_id));
-//                foreach ($deliveries as $delivery) {
-//                    $get_suppliers= new \Application\models\Supplier();
-//                    $suppliers = $get_suppliers->get_supplier_conditionals_supplier_id($delivery['supplier_id']);
-//                    $suppliers->execute(array($delivery['supplier_id']));
-//                    foreach ($suppliers as $supplier) {
-//                        $sub_data['supplier_id'] = $delivery['supplier_id'];
-//                        $sub_data['supplier'] = $supplier['supplier'];
-//                        $sub_data['info'] = $supplier['info'];
-//                        $sub_data['address'] = $delivery['address'];
-//                        $sub_data['city_id'] = $delivery['city_id'];
-//                        $sub_data['date'] = $delivery['date'];
-//                        $sub_data['time'] = $delivery['time'];
-//                        $get_departments= new \Application\models\Department();
-//                        $departments = $get_departments->get_department_conditionals_id($supplier['department']);
-//                        $departments->execute(array($supplier['department']));
-//                        foreach ($departments as $department) {
-//                            $sub_data['department'] = $department['department'];
-//                        }
-//                        $ou[] = $sub_data;
-//                    }
-//                }
-//                $output[] = $ou;
-//            }
-//            echo json_encode($output);
-//    }
 
     public function actionGetArrayOfProductsPromotion()
     {
@@ -866,6 +589,7 @@ class MainController
             echo json_encode($data);
         }
     }
+
     public function actionByCityId()
     {
         if(isset($_POST['city_id']))
@@ -918,6 +642,7 @@ class MainController
             echo 1;
         }
     }
+
     public function actionDeleteOneFromCart()
     {
         if(isset($_POST['id']))
@@ -939,31 +664,6 @@ class MainController
             echo 1;
         }
     }
-//    public function actionDeleteProductFromDiscount()
-//    {
-//        if(isset($_POST['iid']))
-//        {
-//            $id = $_POST['iid'];
-//            $delete_discount = new \Application\models\Product();
-//            $delete_discount->remove_discount($id);
-//            $delete_pr_from_discount = new \Application\models\Discount();
-//            $delete_pr_from_discount->delete_product_from_discount($id);
-//            echo 1;
-//        }
-//    }
-//
-//    public function actionInsertDiscountValue()
-//    {
-//        if(isset($_POST['value_discount']))
-//        {
-//            $id = $_POST['product_id'];
-//            $value_discount = $_POST['value_discount'];
-//            $end_date = $_POST['end_date'];
-//            $insert_discount = new \Application\models\Discount();
-//            $insert_discount->insert_discount_value($id,$value_discount,$end_date);
-//            echo 1;
-//        }
-//    }
 
     public function actionAddToCart()
     {
@@ -1000,151 +700,6 @@ class MainController
             }
         }
     }
-//    public function actionAddToCart()
-//    {
-//        if(isset($_POST['iid']) && isset($_POST['res_ip_address']) && isset($_POST['quantity']) && isset($_POST['price']))
-//        {
-//            $product_id = $_POST['iid'];
-//            $res_ip_address = $_POST['res_ip_address'];
-//            $quantity = $_POST['quantity'];
-//            $price = $_POST['price'];
-//            $real_price = $_POST['real_price'];
-//            $check_if_exist_this_product_in_cart = new \Application\models\Cart();
-//            $result_counts = $check_if_exist_this_product_in_cart->check_if_exist($product_id,$res_ip_address);
-//            $result_counts->execute(array($product_id,$res_ip_address));
-//            foreach($result_counts as $result_count ){
-//                if($result_count['total'] >0) {
-//                    $get_product_from_cart = new \Application\models\Cart();
-//                    $result = $get_product_from_cart->get_product_from_cart($product_id);
-//                    $result->execute(array($product_id));
-//                    foreach($result as $res ){
-//                        $quantity_from_db = $res['quantity'];
-//                        $price_from_db = $res['price'];
-//                        $final_quantity = $quantity_from_db+$quantity;
-//                        $final_qprice = $price_from_db+$price;
-//                        $update_cart = new \Application\models\Cart();
-//                        $update_cart->update_cart($product_id, $res_ip_address, $final_quantity,$final_qprice);
-//                    }
-//                    echo 1;
-//                }else {
-//                    $add_to_cart = new \Application\models\Cart();
-//                    $add_to_cart->add_to_cart($product_id, $res_ip_address, $quantity,$price,$real_price);
-//                    echo 1;
-//                }
-//            }
-//        }
-//    }
-
-//    public function actionInsertPromotionValue()
-//    {
-//        if(isset($_POST['value_promotion']))
-//        {
-//            $id = $_POST['product_id'];
-//            $value_promotion = $_POST['value_promotion'];
-//            $end_date = $_POST['end_date'];
-//            $insert_promotion = new \Application\models\Promotion();
-//            $insert_promotion->insert_promotion_value($id,$value_promotion,$end_date);
-//            echo 1;
-//        }
-//    }
-//    public function actionInsertSpecialOfferValue()
-//    {
-//        if(isset($_POST['value_special_offer']))
-//        {
-//            $id = $_POST['product_id'];
-//            $value_special_offer = $_POST['value_special_offer'];
-//            $end_date = $_POST['end_date'];
-//            $insert_special_offer = new \Application\models\SpecialOffer();
-//            $insert_special_offer->insert_special_offer_value($id,$value_special_offer,$end_date);
-//            echo 1;
-//        }
-//    }
-//    public function actionUpdateDiscountValue()
-//    {
-//        if(isset($_POST['value_discount']))
-//        {
-//            $id = $_POST['product_id'];
-//            $value_discount = $_POST['value_discount'];
-//            $update_discount = new \Application\models\Discount();
-//            $update_discount->update_discount_value($id,$value_discount);
-//            echo 1;
-//        }
-//    }
-//    public function actionUpdateDiscountEndDateValue()
-//    {
-//        if(isset($_POST['end_date']))
-//        {
-//            $id = $_POST['product_id'];
-//            $end_date = $_POST['end_date'];
-//            $newDate = date("Y-m-d H:i:s", strtotime($end_date));
-//            $update_discount = new \Application\models\Discount();
-//            $update_discount->update_discount_end_date_value($id,trim($newDate));
-//            echo $newDate;
-//        }
-//    }
-//    public function actionUpdatePromotionEndDateValue()
-//    {
-//        if(isset($_POST['end_date']))
-//        {
-//            $id = $_POST['product_id'];
-//            $end_date = $_POST['end_date'];
-//            $newDate = date("Y-m-d H:i:s", strtotime($end_date));
-//            $update_promotion = new \Application\models\Promotion();
-//            $update_promotion->update_promotion_end_date_value($id,trim($newDate));
-//            echo 1;
-//        }
-//    }
-//    public function actionUpdateSpecialOfferEndDateValue()
-//    {
-//        if(isset($_POST['end_date']))
-//        {
-//            $id = $_POST['product_id'];
-//            $end_date = $_POST['end_date'];
-//            $newDate = date("Y-m-d H:i:s", strtotime($end_date));
-//            $update_special_offer = new \Application\models\SpecialOffer();
-//            $update_special_offer->update_special_offer_end_date_value($id,trim($newDate));
-//            echo 1;
-//        }
-//    }
-
-//    public function actionUpdatePromotionValue()
-//    {
-//        if(isset($_POST['description']))
-//        {
-//            $id = $_POST['id'];
-//            $description = $_POST['description'];
-//            $left_block = $_POST['left_block'];
-//            $title = $_POST['title'];
-//            $type = $_POST['type'];
-//            $end_date = $_POST['end_date'];
-//            $update_promotion = new \Application\models\Promotion();
-//            $update_promotion->update_promotion_value($id,$description,$left_block,$title,$type,$end_date);
-//            echo 1;
-//        }
-//    }
-
-//    public function actionUpdateSpecialOfferValue()
-//    {
-//        if(isset($_POST['value_special_offer']))
-//        {
-//            $id = $_POST['product_id'];
-//            $value_special_offer = $_POST['value_special_offer'];
-//            $update_special_offer = new \Application\models\SpecialOffer();
-//            $update_special_offer->update_special_offer_value($id,$value_special_offer);
-//            echo 1;
-//        }
-//    }
-
-//    public function actionDeleteSmImgPreview()
-//    {
-//        if(isset($_POST['id']))
-//        {
-//            $id = trim($_POST['id']);
-//            $delete_photo = new \Application\models\SmallImages();
-//            $delete_photo->delete_small_images_preview($id);
-//            echo 1;
-//        }
-//    }
 
     public function actionInsertRating()
     {
@@ -1157,6 +712,7 @@ class MainController
             echo 1;
         }
     }
+
     public function actionFetch()
     {
         if(isset($_POST['product_id'])) {
@@ -1173,16 +729,7 @@ class MainController
                     echo $rating;
         }
     }
-//    public function actionDeleteSmImgAdded()
-//    {
-//        if(isset($_POST['id']))
-//        {
-//            $id = trim($_POST['id']);
-//            $delete_photo = new \Application\models\SmallImages();
-//            $delete_photo->delete_small_images_added($id);
-//            echo 1;
-//        }
-//    }
+
     public function actionInsertNewUser()
     {
         if(NULL!=($_POST['name']))
@@ -1198,7 +745,6 @@ class MainController
             $users->insert_register_user($name,$password,$lastname,$patronymic,$birth_day,$email,$ip_address);
             echo 1;
         }
-
     }
 }
 

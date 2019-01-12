@@ -7,11 +7,6 @@ use Application\models\Uploader;
 
 class AdminController
 {
-    private $uploader;
-    public function __construct() {
-        $this->uploader = new Uploader();
-    }
-
 	public function actionIndex()
 	{
         session_start();
@@ -281,14 +276,6 @@ class AdminController
         session_destroy();
         header('Location: /admin/index');
     }
-
-//    public function actionSignupData()
-//    {
-//        if(isset($_POST['name'])){
-//            $name = $_POST['name'];
-//            echo $name;
-//        }
-//    }
 
     public function actiondeleteClient()
     {
