@@ -106,10 +106,7 @@ error_reporting(E_ALL);?>
                             <div class="column <?= $res_product['brand'];?> <?= $res_product['colour'];?>" email="<?= $email;?>" iid="<?= $res_product['id'];?>" real_price="<?= $res_product['price'];?>" data-price="<?= $res_product['price']; ?>" price="<?= $res_product['price']?>" >
                                 <div class="column-div">
                                     <?php if($res_product['special_offer'] == '1'){?>
-                                    <div class="tooltip1">
                                         <div data-description="2 в 1" class="button button-2in1">2 в 1</div>
-                                        <span class="tooltiptext">2 товара по цене 1!</span>
-                                    </div>
                                     <?php }?>
                                     <?php if($res_product['discount'] == '1' && $res_product['new_product']== '1'){
                                         $about_discount = new \Application\models\Product();
