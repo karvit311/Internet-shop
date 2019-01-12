@@ -62,7 +62,13 @@ error_reporting(E_ALL);?>
                     <p><?= $res_essense_of_promotion['value_promotion'];?></p>
                     <p class="end_date_promotion">Истекает <?= $end_date;?></p>
                 </div>
-                <div id="computers" >
+                <div id="computers">
+                    <?php
+                    if(isset($_SESSION['email']))
+                        $email = $_SESSION['email'];
+                    else
+                        $email = 0;
+                    ?>
                     <?php foreach ($res_products as $res_product) {
                         if ($res_product['promotion_discount'] == '1') {
                             $old_price = $res_product['price'];
@@ -75,7 +81,7 @@ error_reporting(E_ALL);?>
                         if($res_product['promotion_minus'] == '1'){
                             $new_price = $res_product['price'] - $res_product['promotion_discount_value'];
                         }?>
-                        <div class="column" data-price="<?= $new_price; ?>" price="<?= $new_price ?>" iid="<?= $res_product['ProductId'] ?>">
+                        <div class="column" data-price="<?= $new_price; ?>" email="<?= $email;?>" price="<?= $new_price ?>" real_price="<?= $res_product['price'];?>" iid="<?= $res_product['ProductId'] ?>">
                             <div>
                                 <img class="main_img" src="/application/photo/<?= $res_product['department_id']; ?>/<?= $res_product['photo']; ?>" alt="<?= $res_product['name']; ?>" align=right width=190px height=190px>
                             </div>
@@ -93,7 +99,7 @@ error_reporting(E_ALL);?>
                                         <?php }?>
                                     </li>
                                     <li>
-                                        <p class="price_products" price="<?= $new_price ?>"><?= $new_price . ' грн'; ?></p>
+                                        <p class="price_products_promotion" price="<?= $new_price ?>"><?= $new_price . ' грн'; ?></p>
                                     </li>
                                 </ul>
                             </div>
