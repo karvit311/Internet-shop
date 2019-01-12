@@ -11,6 +11,10 @@ class MainController
 //    public function __construct() {
 //        $this->uploader = new Uploader();
 //    }
+    public function actionTest()
+    {
+        require_once(ROOT . '/application/views/main/test.php');
+    }
 	public function actionIndex()
 	{
         session_start();
@@ -888,6 +892,18 @@ class MainController
             $id = $_POST['iid'];
             $delete_product = new \Application\models\Product();
             $delete_product->delete_product($id);
+            echo 1;
+        }
+    }
+
+    public function actionDeleteFromCart()
+    {
+        if(isset($_POST['ip_address']))
+        {
+            $ip_address = $_POST['ip_address'];
+            $email = $_POST['email'];
+            $delete_from_cart = new \Application\models\Cart();
+            $delete_from_cart->delete_from_cart($ip_address,$email);
             echo 1;
         }
     }

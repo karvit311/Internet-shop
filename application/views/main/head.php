@@ -37,6 +37,7 @@
 <!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>-->
 <!--    <script src="https://code.jquery.com/jquery-1.12.2.min.js" integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk=" crossorigin="anonymous"></script>-->
     <script src="https://code.jquery.com/jquery-1.9.0.js" integrity="sha256-TXsBwvYEO87oOjPQ9ifcb7wn3IrrW91dhj6EMEtRLvM=" crossorigin="anonymous"></script>
+<!--    <script src="/application/js/cart-main.js"></script>-->
 <!--    <script src="//code.jquery.com/jquery-1.10.2.js"></script>-->
 <!--    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>-->
 
@@ -70,9 +71,11 @@
     <script src="/application/js/dist/summernote-bs4.min.js"></script>
     <script src="/application/js/dist/summernote-lite.js"></script>
     <script src="/application/js/dist/summernote-lite.min.js"></script>
+    <script src="/application/js/star-rating-svg-master/src/jquery.star-rating-svg.js"></script>
+<!--    <script src="/application/js/cart-main.js"></script>-->
 <!--    <script src="/application/js/star-rating-svg-master/Gruntfile.js"></script>-->
 <!--    <script src="/application/js/star-rating-svg-master/dist/jquery.star-rating-svg.js"></script>-->
-    <script src="/application/js/star-rating-svg-master/src/jquery.star-rating-svg.js"></script>
+
 
 <!--    <script src="/application/js/rater/js/jquery.rating-2.0.min.js"></script>-->
 <!--    <script src="/application/js/rater/js/jquery-1.6.2.min.js"></script>-->

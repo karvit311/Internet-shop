@@ -9,6 +9,7 @@ error_reporting(E_ALL);?>
         <title>Products</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--        <script src="/application/js/cart-main.js"></script>-->
     </head>
     <div class="container">
         <div class="row">
@@ -45,15 +46,14 @@ error_reporting(E_ALL);?>
                                     $get_cart = new \Application\models\Cart();
                                     $res_get_products = $get_cart->get_product_from_cart_by_ip_address($ip_address, $email_session);
                                     $res_get_products->execute(array($ip_address, $email_session));
-
-                                foreach ($res_get_products as $res_product){
-                                    if($res_product['id'] != NULL){?>
+                                foreach ($res_get_products as $res_product){}
+                                    if($res_product['CartId'] != NULL){?>
                                         <a href="#" class="btn btn-danger btn-lg cart_delete_all">
                                             <span class="cart_remove_all">Remove all</span>
                                         </a>
                                     <?php
                                     }
-                                }?>
+                                //}?>
                                 <?php
                                 $ip_address = file_get_contents('https://api.ipify.org');
                                 $get_cart = new \Application\models\Cart();
@@ -228,7 +228,7 @@ error_reporting(E_ALL);?>
                                     $res_get_products = $get_products->get_product_from_cart_by_ip_address($ip_address, $email_session);
                                     $res_get_products->execute(array($ip_address, $email_session));
                                     foreach ($res_get_products as $res_product){} ?>
-                                    <button type="submit" id="step3_button" class="btn btn-info" arr_quantity="<?php if(isset($_SESSION['quantity'])){ ?><?= $_SESSION['quantity'] ?><?php }?>"  array_prices="<?php if(isset($_SESSION['array_prices'])){ ?><?= $_SESSION['array_prices'] ?><?php }?>" length="<?= $_SESSION['length'];?>" product_ids='<?= implode(",", $_SESSION['product_ids']);?>' data-dismiss="modal">Купить</button>
+                                    <button type="submit" id="step3_button" class="btn btn-info" email="<?= $email_session;?>" arr_quantity="<?php if(isset($_SESSION['quantity'])){ ?><?= $_SESSION['quantity'] ?><?php }?>"  array_prices="<?php if(isset($_SESSION['array_prices'])){ ?><?= $_SESSION['array_prices'] ?><?php }?>" length="<?= $_SESSION['length'];?>" product_ids='<?= implode(",", $_SESSION['product_ids']);?>' data-dismiss="modal">Купить</button>
                                 </div>
                             </div>
                         </div>
@@ -241,4 +241,5 @@ error_reporting(E_ALL);?>
         </div>
     </body>
 </html>
-<script src="/application/js/cart-main.js"></script>
+
+<script src="/application/js/cart.js"></script>

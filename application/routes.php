@@ -44,7 +44,7 @@ return array(
     'main/UpdateProduct' => 'main/UpdateProduct',
     'main/UpdatePhoto' => 'main/UpdatePhoto',
     'main/InsertSmallPhoto' => 'main/InsertSmallPhoto',
-//    'main/SignupData' => 'main/SignupData',
+    'main/DeleteFromCart' => 'main/DeleteFromCart',
     'main/Login' => 'main/Login',
     'main/CheckData' => 'main/CheckData',
     'main/CheckUnique' => 'main/CheckUnique',
@@ -77,6 +77,7 @@ return array(
     'main/promotionsProducts/(.+)[0-9]' => 'main/promotionsProducts/$1',
     'main/about' => 'main/about',
     'main/index' => 'main/index',
+    'main/test' => 'main/test',
 
     //////////////////////////////////////////////////
     'admin/adminka' => 'admin/adminka',

@@ -71,7 +71,7 @@ class Cart
     public function get_product_from_cart_by_ip_address($ip_address,$email)
     {
         $conn = App::$app->get_db();
-        $stmt = $conn->prepare("SELECT p.id as ProductId,c.product_id,c.ip_address,c.real_price,p.name,c.quantity,p.photo,p.price as productPrice,p.department_id,c.price as cartPrice,d.id,d.value_discount,d.product_id,d.end_date,p.discount FROM cart c LEFT JOIN products p ON p.id=c.product_id 
+        $stmt = $conn->prepare("SELECT p.id as ProductId,c.product_id,c.id as CartId,c.ip_address,c.real_price,p.name,c.quantity,p.photo,p.price as productPrice,p.department_id,c.price as cartPrice,d.id,d.value_discount,d.product_id,d.end_date,p.discount FROM cart c LEFT JOIN products p ON p.id=c.product_id 
             LEFT JOIN discount d ON p.id=d.product_id  WHERE c.ip_address=? AND email=?");
         $stmt->bindValue(1, $ip_address);
         $stmt->bindValue(2, $email);
@@ -91,6 +91,15 @@ class Cart
         $conn = App::$app->get_db();
         $stmt = $conn->prepare("DELETE  FROM cart WHERE ip_address=:ip_address");
         $stmt->bindParam(":ip_address", $ip_address, \PDO::PARAM_INT);
+        $stmt->execute();
+    }
+
+    public function delete_from_cart($ip_address,$email)
+    {
+        $conn = App::$app->get_db();
+        $stmt = $conn->prepare("DELETE  FROM cart WHERE ip_address=:ip_address AND email=:email");
+        $stmt->bindParam(":ip_address", $ip_address, \PDO::PARAM_INT);
+        $stmt->bindParam(":email", $email, \PDO::PARAM_INT);
         $stmt->execute();
     }
 
