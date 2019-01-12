@@ -9,7 +9,6 @@ error_reporting(E_ALL);?>
         <title>Products</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--        <script src="/application/js/cart-main.js"></script>-->
     </head>
     <div class="container">
         <div class="row">
@@ -46,14 +45,16 @@ error_reporting(E_ALL);?>
                                     $get_cart = new \Application\models\Cart();
                                     $res_get_products = $get_cart->get_product_from_cart_by_ip_address($ip_address, $email_session);
                                     $res_get_products->execute(array($ip_address, $email_session));
-                                foreach ($res_get_products as $res_product){}
-                                    if($res_product['CartId'] != NULL){?>
+                                foreach ($res_get_products as $res_product){
+                                    $_SESSION['CartId'] = $res_product['CartId'];
+                                //}
+                                    if($_SESSION['CartId'] != NULL){?>
                                         <a href="#" class="btn btn-danger btn-lg cart_delete_all">
                                             <span class="cart_remove_all">Remove all</span>
                                         </a>
                                     <?php
                                     }
-                                //}?>
+                                }?>
                                 <?php
                                 $ip_address = file_get_contents('https://api.ipify.org');
                                 $get_cart = new \Application\models\Cart();
@@ -241,5 +242,4 @@ error_reporting(E_ALL);?>
         </div>
     </body>
 </html>
-
 <script src="/application/js/cart.js"></script>
