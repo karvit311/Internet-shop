@@ -19,7 +19,7 @@ error_reporting(E_ALL);?>
                         <label for="password" >Password</label>
                         <input type="password" class="form-control is-valid " name="password" id="password" placeholder="Password">
                     </div>
-                    <button class="btn btn-primary login" id="login" type="submit">Log in</button>
+                    <button class="btn btn-primary login-main" id="login" type="submit">Log in</button>
                 </form>
             </div>
         </div>

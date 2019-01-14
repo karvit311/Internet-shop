@@ -642,7 +642,7 @@ $('.client-links .delete').click(function(){
 });
 //CLIENT _END_
 // ADMINKA
-$("button#login_in_adminka").click(function() {
+$("button.login_in_adminka").click(function() {
     var login = $('#login-adminka').val();
     var password = $('#password-adminka').val();
     $.ajax({
@@ -650,9 +650,7 @@ $("button#login_in_adminka").click(function() {
         url: "/admin/CheckData",
         data: "login=" +login + "&password="+password,
         success: function (response) {
-            alert(response);
             if($.trim(response) == 1) {
-                // location.reload();
                 window.location.replace("/admin/index");
             }else{
                 alert('Проверьте корректность введенных данных!')
