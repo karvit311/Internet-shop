@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fda07be9-14ef-4085-8a27-f15e125b57bc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/controllers/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/js/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/js/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/application/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/admin/adminka.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/adminka.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/main/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/main/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/main/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/main/index.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,12 +29,39 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/css/css.css">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/projects/TEST_PHP/currency_vova/web/Currency.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="1438" column="10" selection-start-line="1438" selection-start-column="10" selection-end-line="1438" selection-end-column="10" />
+            <state relative-caret-position="1139">
+              <caret line="67" column="9" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/projects/TEST_PHP/preg_replace/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://D:/projects/TEST_PHP/preg_replace/1.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" selection-start-line="2" selection-end-line="15" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/main/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="490">
+              <caret line="73" column="10" selection-start-line="73" selection-start-column="10" selection-end-line="73" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -85,8 +108,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/js/promotion-index.js" />
-        <option value="$PROJECT_DIR$/application/js/signup-index.js" />
         <option value="$PROJECT_DIR$/application/views/main/signup.php" />
         <option value="$PROJECT_DIR$/application/views/main/special_offers.php" />
         <option value="$PROJECT_DIR$/application/views/main/worker_update.php" />
@@ -136,6 +157,8 @@
         <option value="$PROJECT_DIR$/application/js/admin.js" />
         <option value="$PROJECT_DIR$/application/views/admin/adminka.php" />
         <option value="$PROJECT_DIR$/application/js/main.js" />
+        <option value="D:/projects/TEST_PHP/currency_vova/web/Currency.php" />
+        <option value="$PROJECT_DIR$/application/views/main/index.php" />
       </list>
     </option>
   </component>
@@ -269,7 +292,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="26" />
     <option name="y" value="3" />
     <option name="width" value="1015" />
@@ -325,26 +348,7 @@
               <item name="localhost" type="b2602c69:ProjectViewProjectNode" />
               <item name="localhost" type="462c0819:PsiDirectoryNode" />
               <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="localhost" type="b2602c69:ProjectViewProjectNode" />
-              <item name="localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="localhost" type="b2602c69:ProjectViewProjectNode" />
-              <item name="localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="localhost" type="b2602c69:ProjectViewProjectNode" />
-              <item name="localhost" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="localhost" type="b2602c69:ProjectViewProjectNode" />
@@ -409,7 +413,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="a4e064a6-aa83-4c62-b330-4f87cb88d7fe" name="Default" comment="" />
+      <changelist id="fda07be9-14ef-4085-8a27-f15e125b57bc" name="Default Changelist" comment="" />
       <created>1533029958512</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -582,17 +586,18 @@
       <workItem from="1547190071906" duration="594000" />
       <workItem from="1547209908557" duration="4939000" />
       <workItem from="1547286028812" duration="13297000" />
+      <workItem from="1547530913792" duration="5306000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2060017000" />
+    <option name="totallyTimeSpent" value="2068760000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8537931" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8537931" visible="true" weight="0.25266525" />
       <window_info id="Structure" order="1" sideWeight="0.4951724" weight="0.2489339" />
       <window_info id="Favorites" order="2" sideWeight="0.1462069" side_tool="true" weight="0.11747851" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -638,21 +643,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/js/view-index.js" />
-    <entry file="file://$PROJECT_DIR$/application/views/main/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="10" lean-forward="true" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/css/view-index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="4" lean-forward="true" selection-start-column="4" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/About.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -809,13 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
           <caret line="20" column="25" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/projects/TEST_PHP/currency_vova/web/Currency.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="102" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -977,6 +960,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="111">
           <caret line="1438" column="10" selection-start-line="1438" selection-start-column="10" selection-end-line="1438" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/projects/TEST_PHP/currency_vova/web/Currency.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1139">
+          <caret line="67" column="9" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/projects/TEST_PHP/preg_replace/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="25" selection-start-line="12" selection-start-column="25" selection-end-line="12" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/projects/TEST_PHP/preg_replace/1.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/main/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="73" column="10" selection-start-line="73" selection-start-column="10" selection-end-line="73" selection-end-column="10" />
         </state>
       </provider>
     </entry>
