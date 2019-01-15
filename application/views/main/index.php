@@ -53,37 +53,4 @@ error_reporting(E_ALL);?>
         </div>
     </body>
 </html>
-<?php
-$haystacks = ['55.100','55.01','50.001','55.00','55.1009100','55.034301200'];
-$patterns = [
-'/^(\d+)(\.)(0+)$/',
-'/(\d+\.)(([0]*+[1-9]+)+)?(0+)$/U',
-];
-$replacements = [
-'$1',
-'$1$2',
-];
-foreach ($haystacks as $key => $number) {
-echo $number . "->" . preg_replace($patterns, $replacements, $number) . "<br>";
-}
-
-
-
-$haystacks = ['іфвкотяра','вфікоте','кот','вкотп','котя','котн'];
-$patterns = [
-        '/(кот)(яра|е|я|п|н)*/u',
-//        '/(кот)+(a-z)+/u',
-];
-$replacements = [
-     '$1',
-//    '$1',
-];
-foreach($haystacks as $key => $res){
-    echo $res . "->".preg_replace($patterns,$replacements,$res)."<br>";
-}
-$string = 'April 15, 2003';
-$pattern = '/(\w+) (\d+), (\d+)/i';
-$replacement = '${1}1,$3';
-echo preg_replace($pattern, $replacement, $string);
-?>
 <script src="/application/js/main.js"></script>
