@@ -9,7 +9,6 @@ if($lastpage > 1)
     if ($page > $counter+1) {
         $pagination.= "<li><a href=\"$targetpage\"page=$prev\">prev</a></li>";
     }
-
     if ($lastpage < 7 + ($adjacents * 2))
     {
         for ($counter = 1; $counter <= $lastpage; $counter++)
@@ -69,7 +68,6 @@ if($lastpage > 1)
             }
         }
     }
-
 //next button
     if ($page < $counter - 1)
         $pagination.= "<li><a href=\"$targetpage page=$next\">next</a></li>";

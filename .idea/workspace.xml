@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fda07be9-14ef-4085-8a27-f15e125b57bc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/application/views/admin/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/head.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application/views/main/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/main/head.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/admin/pagination.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/admin/pagination.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/views/main/pagination.php" beforeDir="false" afterPath="$PROJECT_DIR$/application/views/main/pagination.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,11 +66,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/admin/head.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="646">
-              <caret line="149" column="37" selection-start-line="149" selection-start-column="37" selection-end-line="149" selection-end-column="37" />
+              <caret line="149" column="37" lean-forward="true" selection-start-line="149" selection-start-column="37" selection-end-line="149" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/main/pagination.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="663">
+              <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -117,8 +126,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/application/views/main/special_offers.php" />
-        <option value="$PROJECT_DIR$/application/views/main/worker_update.php" />
         <option value="$PROJECT_DIR$/application/views/admin/newsAdmin.php" />
         <option value="$PROJECT_DIR$/application/js/newsAdmin.js" />
         <option value="$PROJECT_DIR$/application/js/admin-products.js" />
@@ -168,6 +175,8 @@
         <option value="$PROJECT_DIR$/application/views/main/index.php" />
         <option value="$PROJECT_DIR$/application/views/main/head.php" />
         <option value="$PROJECT_DIR$/application/views/admin/head.php" />
+        <option value="$PROJECT_DIR$/application/views/admin/pagination.php" />
+        <option value="$PROJECT_DIR$/application/views/main/pagination.php" />
       </list>
     </option>
   </component>
@@ -596,12 +605,12 @@
       <workItem from="1547190071906" duration="594000" />
       <workItem from="1547209908557" duration="4939000" />
       <workItem from="1547286028812" duration="13297000" />
-      <workItem from="1547530913792" duration="6152000" />
+      <workItem from="1547530913792" duration="6246000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2069606000" />
+    <option name="totallyTimeSpent" value="2069700000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -653,20 +662,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/models/Department.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="107" column="5" selection-start-line="107" selection-start-column="5" selection-end-line="107" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Discount.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="722">
-          <caret line="79" column="5" selection-start-line="79" selection-start-column="5" selection-end-line="79" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/News.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="722">
@@ -987,10 +982,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/admin/pagination.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/admin/head.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
-          <caret line="149" column="37" selection-start-line="149" selection-start-column="37" selection-end-line="149" selection-end-column="37" />
+          <caret line="149" column="37" lean-forward="true" selection-start-line="149" selection-start-column="37" selection-end-line="149" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/main/pagination.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="69" column="5" selection-start-line="69" selection-start-column="5" selection-end-line="69" selection-end-column="5" />
         </state>
       </provider>
     </entry>
