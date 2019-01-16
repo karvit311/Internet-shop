@@ -642,7 +642,7 @@ $('.client-links .delete').click(function(){
 });
 //CLIENT _END_
 // ADMINKA
-$("button.login_in_adminka").click(function() {
+$('.login_in_adminka').click(function() {
     var login = $('#login-adminka').val();
     var password = $('#password-adminka').val();
     $.ajax({
@@ -1332,3 +1332,37 @@ $(".column-admin .button-edit").each(function(index) {
         });
     });
 });
+// ABOUT
+$('.admin-about').click(function(){
+    $("#modalAbout").modal("show");
+    $.ajax({
+        type:"post",
+        url:"/main/GetAbout",
+        data:"id="+1,
+        dataType:"json",
+        success:function(res){
+            var workers = JSON.stringify(res);
+            var obj = JSON.parse(workers);
+            $.each(obj, function(iy, ely) {
+                var content = ely['content'];
+                $('#adminAboutContent').summernote('code',content);
+            });
+        },
+        error:function(){
+        }
+    });
+    $('#about_company_admin').click(function(){
+        var title =  $('#adminAboutTitle').val();
+        var textareaValue = $('#adminAboutContent').summernote('code');
+        $.ajax({
+            type:"post",
+            url:"/admin/UpdateAboutCompany",
+            data:"title="+title+"&content="+textareaValue,
+            success:function(res){
+            },
+            error:function(){
+            }
+        })
+    });
+});
+// ABOUT _END_

@@ -48,11 +48,6 @@
         <script src="/application/js/dist/summernote-lite.min.js"></script>
         <script src="/application/js/JQuery-Session-Plugin-master/jquery.session.js"></script>
     </head>
-<style>
-    .dropdown-menu a{
-        background:white;
-    }
-</style>
     <body>
         <div id="head-index">
             <ul id="head-list-my" class="list-group">
@@ -120,38 +115,4 @@
         </div>
     </div>
 </div><!--END MODAl -->
-<script>
-    $('.admin-about').click(function(){
-        $("#modalAbout").modal("show");
-        $.ajax({
-            type:"post",
-            url:"/main/GetAbout",
-            data:"id="+1,
-            dataType:"json",
-            success:function(res){
-                var workers = JSON.stringify(res);
-                var obj = JSON.parse(workers);
-                $.each(obj, function(iy, ely) {
-                    var content = ely['content'];
-                    $('#adminAboutContent').summernote('code',content);
-                });
-            },
-            error:function(){
-            }
-        });
-        $('#about_company_admin').click(function(){
-           var title =  $('#adminAboutTitle').val();
-           var content = $.trim($('#adminAboutContent').val());
-            var textareaValue = $('#adminAboutContent').summernote('code');
-           $.ajax({
-               type:"post",
-               url:"/admin/UpdateAboutCompany",
-               data:"title="+title+"&content="+textareaValue,
-               success:function(res){
-               },
-               error:function(){
-               }
-           })
-        });
-    });
-</script>
+<script src="/application/js/admin.js"></script>

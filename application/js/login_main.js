@@ -1,5 +1,5 @@
 // LOGIN
-$("button.login-main").click(function() {
+$(".login-main").click(function() {
     var email = $('#email').val();
     var password = $('#password').val();
     $.ajax({

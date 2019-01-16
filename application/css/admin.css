@@ -77,4 +77,7 @@
 #left-block li{
     position:relative;
 }
+.dropdown-menu a{
+    background:white;
+}
 
