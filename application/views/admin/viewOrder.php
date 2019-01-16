@@ -1,7 +1,7 @@
 <?php
 if ($_SESSION['admin'] = "admin") {
     if (isset($_SESSION['admin_role'])) {
-        if ($_SESSION['admin_role'] == 'admin'  || $_SESSION['admin_role'] == 'admin-order') {?>
+        if ($_SESSION['admin_role'] == 'admin'  || $_SESSION['admin_role'] == 'admin-order') {
             $_SESSION['urlpage'] = "<a href='/admin/admin/index' >Главная</a> \ <a href='/admin/admin/orders' >Просмотр заказов</a>";?>
             <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
             <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">

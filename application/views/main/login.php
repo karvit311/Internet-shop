@@ -23,7 +23,6 @@ error_reporting(E_ALL);?>
                 </form>
             </div>
         </div>
-        <?php print_r($_SESSION);?>
     </body>
 </html>
-<script src="/application/js/main.js"></script>
+<script src="/application/js/login_main.js"></script>

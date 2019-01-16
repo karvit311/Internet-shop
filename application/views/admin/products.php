@@ -72,7 +72,6 @@ $_SESSION['urlpage'] = "<a href='/admin/index'>Товары</a>";?>
                         </ul>
                     </div>
                     <?php
-                    print_r($_SESSION);
                     if ($_SESSION['admin'] = "admin") {
                         if (isset($_SESSION['admin_role'])) {
                             if ($_SESSION['admin_role'] == 'admin-product' || $_SESSION['admin_role'] == 'admin') {
@@ -92,7 +91,6 @@ $_SESSION['urlpage'] = "<a href='/admin/index'>Товары</a>";?>
                                     $temp = substr($str, 0, $length);
                                     return substr($temp, 0, strrpos($temp, ' ')) . $postfix;
                                 }
-
                                 ?>
                                 <!-- DELETING SUCCESS-->
                                 <div class="alert alert-success deleting_product alert-dismissable"
@@ -236,10 +234,7 @@ $_SESSION['urlpage'] = "<a href='/admin/index'>Товары</a>";?>
                                              price="<?= $res_product['price'] ?>">
                                             <div class="column-div">
                                                 <?php if ($res_product['special_offer'] == '1') { ?>
-                                                    <!--                                                    <img class="column-image-2-in-1" src="/application/photo/icons/2_in_1.jpg" width="45px;" height="45px;">-->
-                                                    <div data-description="2 в 1" class="button button-2in1">2 в
-                                                        1
-                                                    </div>
+                                                    <div data-description="2 в 1" class="button button-2in1">2 в 1</div>
                                                 <?php } ?>
                                                 <?php
                                                 if ($res_product['discount'] == '1') {
@@ -730,7 +725,7 @@ $_SESSION['urlpage'] = "<a href='/admin/index'>Товары</a>";?>
                                 </div>
                                 <?php
                             }
-                        }else{ ?>
+                        } else { ?>
                             <script type="text/javascript">
                                 window.location.href = '/main/Login';
                             </script>

@@ -1,4 +1,39 @@
-
+$(".column-admin .button-delete").each(function() {
+    $(this).on("click", function(){
+        var iid = $(this).attr('iid');
+        alert(iid);
+        var YOUR_MESSAGE_STRING_CONST = "Are you sure to Delete this product?";
+        confirmDialog(YOUR_MESSAGE_STRING_CONST, function(){
+            $.ajax({
+                type: "POST",
+                url: "/admin/DeleteProduct",
+                data: "iid=" + iid ,
+                success: function (response) {
+                    if(response == 1) {
+                        $("#flash-msg-deleting-product").show();
+                        setTimeout(function () {
+                            location.reload();
+                        }, 1000);
+                    }
+                },
+                error: function () {
+                    alert("Error");
+                }
+            });
+            console.log("deleted!");
+        });
+        function confirmDialog(message, onConfirm){
+            var fClose = function(){
+                modal.modal("hide");
+            };
+            var modal = $("#confirmModal");
+            modal.modal("show");
+            $("#confirmMessage").empty().append(message);
+            $("#confirmOk").unbind().one('click', onConfirm).one('click', fClose);
+            $("#confirmCancel").unbind().one("click", fClose);
+        }
+    });
+});
 $("#menu ul").hide();
 $("#menu li span").click(function() {
     $("#menu ul:visible").slideUp("normal");

@@ -865,8 +865,8 @@ $(document).ready(function(){
     });
 });
 // ALL DEPARTMENTS _END_
-$(".column-admin .button-delete").each(function(index) {
-    $(this).on("click", function(e){
+$(".column-admin .button-delete").each(function() {
+    $(this).on("click", function(){
         var iid = $(this).attr('iid');
         var YOUR_MESSAGE_STRING_CONST = "Are you sure to Delete this product?";
         confirmDialog(YOUR_MESSAGE_STRING_CONST, function(){
@@ -986,23 +986,22 @@ $(".column-admin .button-edit").each(function(index) {
                                 if (id_of_this_page_product != attr_id_of_this_product) {
                                 } else {
                                     $('.small_images').css('display','block');
-
                                     $('.small_images_modal_edit')
+                                    .append($('<div>')
+                                        .addClass('adding_div_small_img')
+                                        .css('width','160px')
                                         .append($('<div>')
-                                            .addClass('adding_div_small_img')
-                                            .css('width','160px')
-                                            .append($('<div>')
-                                                .addClass('modal_small_images_div' + res_small_id)
-                                                .css('width', '160px')
-                                                .attr('id_of_this_product', id_of_this_page_product)
-                                                .css('padding', '10px')
-                                                .css('margin-left', '50px')
-                                                .css('margin-bottom', '10px')
-                                                .append($('<img>')
-                                                    .attr('src', '/application/photo/small_images/' + department_id + '/' + res_small_img)
-                                                    .addClass('modal_small_images_main')
-                                                    .css('width', '120px')
-                                                    .attr('iid', res_small_id))
+                                            .addClass('modal_small_images_div' + res_small_id)
+                                            .css('width', '160px')
+                                            .attr('id_of_this_product', id_of_this_page_product)
+                                            .css('padding', '10px')
+                                            .css('margin-left', '50px')
+                                            .css('margin-bottom', '10px')
+                                            .append($('<img>')
+                                                .attr('src', '/application/photo/small_images/' + department_id + '/' + res_small_img)
+                                                .addClass('modal_small_images_main')
+                                                .css('width', '120px')
+                                                .attr('iid', res_small_id))
                                                 .append($('<button>')
                                                     .attr('type', 'button')
                                                     .css('margin-left', '-10px')
@@ -1016,10 +1015,10 @@ $(".column-admin .button-edit").each(function(index) {
                                                     .append($('<span>')
                                                         .attr('aria-hidden', true)
                                                         .html('&times;')
-                                                    )
                                                 )
                                             )
                                         )
+                                    )
                                 }
                             });
                             $('.close').click(function (index) {
