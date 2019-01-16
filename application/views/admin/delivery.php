@@ -365,24 +365,24 @@ $_SESSION['urlpage'] = "<a href='/site/index'>Поставки</a>";?>
                                     <div class="modal-body">
                                         <table class="table table-dark">
                                             <thead>
-                                            <tr>
-                                                <th>Address</th>
-                                                <th>Date</th>
-                                                <th>Time</th>
-                                                <th>Supplier</th>
-                                                <th>Contacts of supplier</th>
-                                                <th>Department</th>
-                                            </tr>
+                                                <tr>
+                                                    <th>Address</th>
+                                                    <th>Date</th>
+                                                    <th>Time</th>
+                                                    <th>Supplier</th>
+                                                    <th>Contacts of supplier</th>
+                                                    <th>Department</th>
+                                                </tr>
                                             </thead>
                                             <tbody>
-                                            <tr>
-                                                <td class="modal_delivery_date_address"></td>
-                                                <td class="modal_delivery_date_date"></td>
-                                                <td class="modal_delivery_date_time"></td>
-                                                <td class="modal_delivery_date_supplier"></td>
-                                                <td class="modal_delivery_date_contacts_of_supplier"></td>
-                                                <td class="modal_delivery_date_department"></td>
-                                            </tr>
+                                                <tr>
+                                                    <td class="modal_delivery_date_address"></td>
+                                                    <td class="modal_delivery_date_date"></td>
+                                                    <td class="modal_delivery_date_time"></td>
+                                                    <td class="modal_delivery_date_supplier"></td>
+                                                    <td class="modal_delivery_date_contacts_of_supplier"></td>
+                                                    <td class="modal_delivery_date_department"></td>
+                                                </tr>
                                             </tbody>
                                         </table>
                                     </div>
@@ -495,7 +495,7 @@ $_SESSION['urlpage'] = "<a href='/site/index'>Поставки</a>";?>
                             </form>
                         </div>
                     <?php
-                    }else{?>
+                    } else {?>
                         <!-- ERROR PRIVILEGE-->
                         <div class="alert alert-danger  alert-dismissable error-privilege"  id="flash-msg-privilege-orders">
                             <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
@@ -503,7 +503,7 @@ $_SESSION['urlpage'] = "<a href='/site/index'>Поставки</a>";?>
                         </div>
                     <?php
                     }
-                }else{ ?>
+                } else { ?>
                     <script type="text/javascript">
                         window.location.href = '/main/Login';
                     </script>
@@ -512,18 +512,6 @@ $_SESSION['urlpage'] = "<a href='/site/index'>Поставки</a>";?>
                 header('Location: /main/Login');
             }?>
         </div>
-        <div id="output4"></div>
-        <div id="output5"></div>
     </body>
 </html>
 <script src="/application/js/admin.js"></script>
-<style>
-    .activeClass{
-        background: red;
-        color:darkgreen;
-    }
-    .hover{
-        background: greenyellow;
-        color:darkgreen;
-    }
-</style>;

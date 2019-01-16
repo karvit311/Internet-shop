@@ -90,7 +90,7 @@
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <!-- Modal body -->
-            <div class="modal-body">
+            <div class="modal-body" >
                 <form method="post" class="feedback" >
                     <?php $about_company = new \Application\models\About();
                     $res_about_companies= $about_company->get_about();
